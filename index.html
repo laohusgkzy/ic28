@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全国28所示范性微电子学院 · 介绍合集</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif; background:#f0f2f5; color:#1a1a2e; line-height:1.6; }
+  body.locked { overflow:hidden; }
+
+  /* ===== 口令门 ===== */
+  #gate { position:fixed; inset:0; z-index:100000; display:flex; align-items:center; justify-content:center;
+           background:linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#312e81 100%); padding:24px; }
+  #gate.hidden { display:none; }
+  .gate-box { width:100%; max-width:400px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.18);
+               border-radius:18px; padding:40px 36px 34px; text-align:center; backdrop-filter:blur(10px);
+               box-shadow:0 24px 60px rgba(0,0,0,.4); }
+  .gate-box .lock { width:64px; height:64px; margin:0 auto 18px; border-radius:50%; background:linear-gradient(135deg,#6a11cb,#2575fc);
+                     display:flex; align-items:center; justify-content:center; font-size:30px; box-shadow:0 8px 24px rgba(37,117,252,.45); }
+  .gate-box h2 { color:#fff; font-size:20px; letter-spacing:2px; }
+  .gate-box .g-sub { color:rgba(255,255,255,.55); font-size:13px; margin-top:8px; }
+  .gate-box input { width:100%; margin-top:24px; padding:13px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,.25);
+                     background:rgba(255,255,255,.1); color:#fff; font-size:17px; letter-spacing:4px; text-align:center; outline:none; font-family:inherit; }
+  .gate-box input::placeholder { letter-spacing:1px; font-size:14px; color:rgba(255,255,255,.35); }
+  .gate-box input:focus { border-color:#2575fc; background:rgba(255,255,255,.15); }
+  .gate-box button { width:100%; margin-top:16px; padding:13px; border:none; border-radius:10px; cursor:pointer;
+                      background:linear-gradient(135deg,#6a11cb,#2575fc); color:#fff; font-size:16px; font-weight:600; letter-spacing:4px; font-family:inherit; }
+  .gate-box button:hover { filter:brightness(1.12); }
+  .gate-box .g-remember { margin-top:16px; display:flex; align-items:center; justify-content:center; gap:6px; color:rgba(255,255,255,.55); font-size:13px; }
+  .gate-box .g-remember input { width:auto; margin:0; letter-spacing:0; accent-color:#2575fc; }
+  .gate-box .g-err { color:#fca5a5; font-size:13px; margin-top:14px; min-height:18px; }
+  .gate-box.shake { animation:shake .4s; }
+  @keyframes shake { 0%,100%{transform:translateX(0);} 20%{transform:translateX(-10px);} 40%{transform:translateX(10px);} 60%{transform:translateX(-7px);} 80%{transform:translateX(7px);} }
+
+  /* ===== 主内容 ===== */
+  .hero { background:linear-gradient(135deg,#6a11cb 0%,#2575fc 60%,#1d9bf0 100%); color:#fff; padding:48px 24px 64px; text-align:center; position:relative; }
+  .hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:5px; background:linear-gradient(90deg,#ffd700,#ff8c00,#ff6b6b,#ffd700); background-size:200% 100%; animation:shimmer 3s linear infinite; }
+  @keyframes shimmer { 0%{background-position:0% 0%;} 100%{background-position:200% 0%;} }
+  .hero h1 { font-size:clamp(22px,4vw,36px); letter-spacing:2px; }
+  .hero .sub { margin-top:12px; font-size:15px; opacity:.9; }
+  .hero .stats { margin-top:24px; display:flex; justify-content:center; gap:32px; flex-wrap:wrap; }
+  .hero .stat { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.3); border-radius:12px; padding:10px 22px; }
+  .hero .stat b { display:block; font-size:26px; }
+  .hero .stat span { font-size:13px; opacity:.85; }
+  .toolbar { max-width:1200px; margin:-36px auto 0; padding:0 20px; }
+  .tool-box { background:#fff; border-radius:14px; box-shadow:0 6px 24px rgba(0,0,0,.08); padding:18px 20px; }
+  .search-wrap { position:relative; }
+  .search-wrap input { width:100%; padding:13px 18px 13px 44px; border:2px solid #e5e7eb; border-radius:10px; font-size:15px; outline:none; transition:.2s; font-family:inherit; }
+  .search-wrap input:focus { border-color:#2575fc; }
+  .search-wrap .icon { position:absolute; left:14px; top:50%; transform:translateY(-50%); font-size:17px; color:#9ca3af; }
+  .filters { margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  .filters .flabel { font-size:13px; color:#6b7280; font-weight:600; }
+  .chip { border:1px solid #e5e7eb; background:#f9fafb; color:#374151; border-radius:999px; padding:5px 14px; font-size:13px; cursor:pointer; transition:.15s; font-family:inherit; }
+  .chip:hover { border-color:#2575fc; color:#2575fc; }
+  .chip.active { background:#2575fc; border-color:#2575fc; color:#fff; }
+  .chip.reset { color:#b91c1c; }
+  .grid { max-width:1200px; margin:26px auto 0; padding:0 20px; display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:18px; padding-bottom:60px; }
+  .card { display:flex; flex-direction:column; background:#fff; border-radius:14px; box-shadow:0 3px 14px rgba(0,0,0,.06); padding:20px 22px; text-decoration:none; color:#1a1a2e; transition:.18s; border:2px solid transparent; }
+  .card:hover { transform:translateY(-3px); box-shadow:0 10px 26px rgba(37,117,252,.16); border-color:#c7dbff; }
+  .school-name { font-size:20px; font-weight:700; letter-spacing:1px; }
+  .college-name { font-size:13px; color:#6b7280; margin-top:3px; }
+  .card-tags { margin-top:14px; display:flex; flex-wrap:wrap; gap:7px; flex:1; align-content:flex-start; }
+  .tag { font-size:12px; padding:2.5px 10px; border-radius:6px; border:1px solid #e5e7eb; background:#f9fafb; color:#374151; }
+  .tag.region { color:#047857; background:#ecfdf5; border-color:#a7f3d0; }
+  .tag.feat { color:#7c3aed; background:#f5f3ff; border-color:#ddd6fe; }
+  .card-actions { margin-top:16px; display:flex; gap:10px; align-items:center; }
+  .btn { font-size:13px; padding:7px 15px; border-radius:8px; text-decoration:none; }
+  .btn.main { background:linear-gradient(135deg,#6a11cb,#2575fc); color:#fff; }
+  .btn.pdf { background:#fff; color:#b45309; border:1.5px solid #fde68a; }
+  .btn.pdf:hover { background:#fffbeb; }
+  .empty { display:none; text-align:center; color:#9ca3af; padding:60px 0; grid-column:1/-1; font-size:15px; }
+  footer { text-align:center; color:#9ca3af; font-size:13px; padding:0 20px 46px; }
+  .lock-mini { position:fixed; right:16px; bottom:16px; z-index:9999; }
+  .lock-mini a { display:inline-block; background:rgba(31,58,138,.85); color:#fff; text-decoration:none; font-size:12px; padding:6px 14px; border-radius:999px; }
+  @media (max-width:600px) {
+    .hero .stats { gap:12px; }
+    .hero .stat { padding:8px 14px; }
+    .hero .stat b { font-size:20px; }
+  }
+</style>
+</head>
+<body class="locked">
+
+<!-- ===== 口令门 ===== -->
+<div id="gate">
+  <div class="gate-box" id="gateBox">
+    <div class="lock">🔐</div>
+    <h2>全国28所示范性微电子学院</h2>
+    <div class="g-sub">本站为受限内容，请输入访问口令</div>
+    <input id="pwInput" type="password" placeholder="请输入访问口令" autocomplete="off" maxlength="20">
+    <button id="pwBtn">进 入</button>
+    <div class="g-remember"><input type="checkbox" id="remember" checked><label for="remember">本设备7天内免输口令</label></div>
+    <div class="g-err" id="pwErr"></div>
+  </div>
+</div>
+
+<!-- ===== 主内容（口令通过后可见） ===== -->
+  <div class="hero">
+    <h1>全国28所示范性微电子学院</h1>
+    <div class="sub">院校层次 · 硕博士点 · 侧重方向 · 保研考研 · 就业薪酬 · 本省位次 —— 一校一图，全维度解读</div>
+    <div class="stats">
+      <div class="stat"><b>28</b><span>示范性微电子学院</span></div>
+      <div class="stat"><b>23</b><span>所 985</span></div>
+      <div class="stat"><b>26</b><span>所 211</span></div>
+      <div class="stat"><b>28</b><span>份PDF可下载</span></div>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <div class="tool-box">
+      <div class="search-wrap">
+        <span class="icon">🔍</span>
+        <input id="search" type="text" placeholder="搜索学校 / 学院 / 关键词（如：博士点、产教融合、深圳）……">
+      </div>
+      <div class="filters">
+        <span class="flabel">层次</span>
+        <button class="chip" data-filter="level" data-value="985">985</button><button class="chip" data-filter="level" data-value="211">211</button><button class="chip" data-filter="level" data-value="双一流">双一流</button>
+        <span class="flabel" style="margin-left:10px;">省份</span>
+        <button class="chip" data-filter="province" data-value="湖北">湖北</button><button class="chip" data-filter="province" data-value="北京">北京</button><button class="chip" data-filter="province" data-value="上海">上海</button><button class="chip" data-filter="province" data-value="江苏">江苏</button><button class="chip" data-filter="province" data-value="浙江">浙江</button><button class="chip" data-filter="province" data-value="四川">四川</button><button class="chip" data-filter="province" data-value="陕西">陕西</button><button class="chip" data-filter="province" data-value="安徽">安徽</button><button class="chip" data-filter="province" data-value="天津">天津</button><button class="chip" data-filter="province" data-value="辽宁">辽宁</button><button class="chip" data-filter="province" data-value="山东">山东</button><button class="chip" data-filter="province" data-value="湖南">湖南</button><button class="chip" data-filter="province" data-value="广东">广东</button><button class="chip" data-filter="province" data-value="福建">福建</button>
+        <button class="chip reset" data-filter="reset" style="margin-left:auto;">✕ 清除筛选</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid" id="grid">
+
+    <a class="card" href="pages/华中科技大学_集成电路学院.html" data-search="华中科技大学 集成电路学院 985工程 211工程 双一流 教育部直属 湖北 · 武汉 国家集成电路产教融合创新平台（8所之一） 国家集成电路学院（6所之一）" data-province="湖北" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">华中科技大学</div>
+        <div class="college-name">集成电路学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">湖北 · 武汉</span><span class="tag feat">教育部直属</span><span class="tag feat">国家集成电路产教融合创新平台（8所之一）</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/华中科技大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/清华大学_集成电路学院.html" data-search="清华大学 集成电路学院 985工程 211工程 双一流 教育部直属 北京 · 海淀 国家集成电路产教融合创新平台（全国首批） 国家示范性微电子学院（首批）" data-province="北京" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">清华大学</div>
+        <div class="college-name">集成电路学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">北京 · 海淀</span><span class="tag feat">教育部直属</span><span class="tag feat">国家集成电路产教融合创新平台（全国首批）</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/清华大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/中国科学院大学_集成电路学院.html" data-search="中国科学院大学 集成电路学院 双一流 中科院直属 非985/211（录取分媲美清北） 北京 · 玉泉路/雁栖湖 国家示范性微电子学院（首批） 科教融合 ESI全球第10 / 内地第1 18个A+学科（全国第三）" data-province="北京" data-level="双一流">
+      <div class="card-top">
+        <div class="school-name">中国科学院大学</div>
+        <div class="college-name">集成电路学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">北京 · 玉泉路/雁栖湖</span><span class="tag feat">中科院直属</span><span class="tag feat">非985/211（录取分媲美清北）</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/中国科学院大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/北京大学_集成电路学院.html" data-search="北京大学 集成电路学院 985工程 211工程 双一流 教育部直属 北京 · 海淀 国家集成电路产教融合创新平台（全国首批） 国家示范性微电子学院（首批） 中国半导体学科发源地" data-province="北京" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">北京大学</div>
+        <div class="college-name">集成电路学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">北京 · 海淀</span><span class="tag feat">教育部直属</span><span class="tag feat">国家集成电路产教融合创新平台（全国首批）</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/北京大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/北京航空航天大学_集成电路学院.html" data-search="北京航空航天大学 集成电路科学与工程学院 985工程 211工程 双一流 工信部直属 北京 · 海淀 全国首批国家集成电路学院 集成电路科学与工程一级学科博士点" data-province="北京" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">北京航空航天大学</div>
+        <div class="college-name">集成电路科学与工程学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">北京 · 海淀</span><span class="tag feat">工信部直属</span><span class="tag feat">全国首批国家集成电路学院</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/北京航空航天大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/北京理工大学_集成电路学院.html" data-search="北京理工大学 集成电路与电子学院 985工程 211工程 双一流 工信部直属 北京 · 海淀/房山 国家集成电路高层次紧缺人才培养专项 集成电路科学与工程一级学科博士点（首批）" data-province="北京" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">北京理工大学</div>
+        <div class="college-name">集成电路与电子学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">北京 · 海淀/房山</span><span class="tag feat">工信部直属</span><span class="tag feat">国家集成电路高层次紧缺人才培养专项</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/北京理工大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/北京工业大学_集成电路学院.html" data-search="北京工业大学 微电子学院 211工程 双一流 北京市属重点大学 北京 · 朝阳 国家集成电路人才培养基地 电子科学与技术一级学科博士点" data-province="北京" data-level="211 双一流">
+      <div class="card-top">
+        <div class="school-name">北京工业大学</div>
+        <div class="college-name">微电子学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">北京 · 朝阳</span><span class="tag feat">北京市属重点大学</span><span class="tag feat">国家集成电路人才培养基地</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/北京工业大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/复旦大学_集成电路学院.html" data-search="复旦大学 集成电路与微纳电子创新学院 985工程 211工程 双一流 教育部直属 上海 · 杨浦/张江 C9联盟 集成电路科学与工程全国唯一双一流学科 国家集成电路产教融合创新平台" data-province="上海" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">复旦大学</div>
+        <div class="college-name">集成电路与微纳电子创新学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">上海 · 杨浦/张江</span><span class="tag feat">教育部直属</span><span class="tag feat">C9联盟</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/复旦大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/上海交通大学_集成电路学院.html" data-search="上海交通大学 集成电路学院 985工程 211工程 双一流 教育部直属 上海 · 闵行 C9联盟 微电子科学与工程 全国第1（5★+） 国家集成电路人才培养基地（首批）" data-province="上海" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">上海交通大学</div>
+        <div class="college-name">集成电路学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">上海 · 闵行</span><span class="tag feat">教育部直属</span><span class="tag feat">C9联盟</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/上海交通大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/同济大学_集成电路学院.html" data-search="同济大学 集成电路科学与工程学院 985工程 211工程 双一流 教育部直属 上海 · 四平路/嘉定 国家示范性微电子学院（26所之一） 国家集成电路人才培养基地 微电子-应用物理学双学士学位" data-province="上海" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">同济大学</div>
+        <div class="college-name">集成电路科学与工程学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">上海 · 四平路/嘉定</span><span class="tag feat">教育部直属</span><span class="tag feat">国家示范性微电子学院（26所之一）</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/同济大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/东南大学_集成电路学院.html" data-search="东南大学 集成电路学院 985工程 211工程 双一流 教育部直属 江苏 · 南京 / 无锡 全国首家集成电路学院（2003） 国家示范性微电子学院（首批9所） 国家集成电路人才培养基地（首批9所）" data-province="江苏" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">东南大学</div>
+        <div class="college-name">集成电路学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">江苏 · 南京 / 无锡</span><span class="tag feat">教育部直属</span><span class="tag feat">全国首家集成电路学院（2003）</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/东南大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/南京大学_集成电路学院.html" data-search="南京大学 集成电路学院 985工程 211工程 双一流 C9联盟 教育部直属 江苏 · 南京 / 苏州 国家示范性微电子学院（2015） 国家集成电路产教融合创新平台" data-province="江苏" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">南京大学</div>
+        <div class="college-name">集成电路学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">江苏 · 南京 / 苏州</span><span class="tag feat">C9联盟</span><span class="tag feat">教育部直属</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/南京大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/浙江大学_集成电路学院.html" data-search="浙江大学 集成电路学院 985工程 211工程 双一流 C9联盟 教育部直属 浙江 · 杭州 国家示范性微电子学院（首批2015） 全国首批集成电路科学与工程一级学科" data-province="浙江" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">浙江大学</div>
+        <div class="college-name">集成电路学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">浙江 · 杭州</span><span class="tag feat">C9联盟</span><span class="tag feat">教育部直属</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/浙江大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/电子科技大学_集成电路学院.html" data-search="电子科技大学 集成电路科学与工程学院 985工程 211工程 双一流A类 教育部直属 四川 · 成都 电子信息领域唯一985 国家集成电路产教融合创新平台（牵头8所之一）" data-province="四川" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">电子科技大学</div>
+        <div class="college-name">集成电路科学与工程学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">四川 · 成都</span><span class="tag feat">教育部直属</span><span class="tag feat">电子信息领域唯一985</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/电子科技大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/西安电子科技大学_集成电路学院.html" data-search="西安电子科技大学 集成电路学部（微电子学院） 211工程 双一流 985优势学科创新平台 教育部直属 陕西 · 西安 国家集成电路产教融合创新平台 国家集成电路人才培养基地（首批9个）" data-province="陕西" data-level="211 双一流 985">
+      <div class="card-top">
+        <div class="school-name">西安电子科技大学</div>
+        <div class="college-name">集成电路学部（微电子学院）</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag region">陕西 · 西安</span><span class="tag feat">教育部直属</span><span class="tag feat">国家集成电路产教融合创新平台</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/西安电子科技大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/西安交通大学_集成电路学院.html" data-search="西安交通大学 微电子学院 985工程 211工程 双一流 C9联盟 教育部直属 陕西 · 西安 国家集成电路人才培养基地 专精特新产业学院（2023）" data-province="陕西" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">西安交通大学</div>
+        <div class="college-name">微电子学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">陕西 · 西安</span><span class="tag feat">C9联盟</span><span class="tag feat">教育部直属</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/西安交通大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/中国科学技术大学_集成电路学院.html" data-search="中国科学技术大学 微电子学院 985工程 211工程 双一流 C9联盟 中国科学院直属 安徽 · 合肥 集成电路科学与工程一级学科博士点" data-province="安徽" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">中国科学技术大学</div>
+        <div class="college-name">微电子学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">安徽 · 合肥</span><span class="tag feat">C9联盟</span><span class="tag feat">中国科学院直属</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/中国科学技术大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/西北工业大学_集成电路学院.html" data-search="西北工业大学 集成电路学院(微电子学院) 985工程 211工程 双一流A类 工信部直属 陕西 · 西安（长安校区） 国家示范性微电子学院（2015） "三航"微电子特色（航空·航天·航海） 集成电路科学与工程 一级学科博士点（2021首批）" data-province="陕西" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">西北工业大学</div>
+        <div class="college-name">集成电路学院(微电子学院)</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">陕西 · 西安（长安校区）</span><span class="tag feat">工信部直属</span><span class="tag feat">国家示范性微电子学院（2015）</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/西北工业大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/合肥工业大学_集成电路学院.html" data-search="合肥工业大学 微电子学院 211工程 双一流 教育部直属 安徽 · 合肥（翡翠湖校区） 机械四小龙 · 汽车黄埔 与中科大联合培养创新实验班" data-province="安徽" data-level="211 双一流">
+      <div class="card-top">
+        <div class="school-name">合肥工业大学</div>
+        <div class="college-name">微电子学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">安徽 · 合肥（翡翠湖校区）</span><span class="tag feat">教育部直属</span><span class="tag feat">与中科大联合培养创新实验班</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/合肥工业大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/天津大学_微电子学院.html" data-search="天津大学 微电子学院 985工程 211工程 双一流 教育部直属 天津 · 北洋园校区 国家示范性微电子学院（2015，天津市唯一） 微电子学与固体电子学 国家二级重点学科 集成电路科学与工程 交叉学科博士点（2022）" data-province="天津" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">天津大学</div>
+        <div class="college-name">微电子学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">天津 · 北洋园校区</span><span class="tag feat">教育部直属</span><span class="tag feat">国家示范性微电子学院（2015，天津市唯一）</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/天津大学_微电子学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/大连理工大学_集成电路学院.html" data-search="大连理工大学 集成电路学院 985工程 211工程 双一流 教育部直属 辽宁 · 大连（开发区校区） 东北地区唯一国家示范性微电子学院（2015筹建） 集成电路科学与工程 一级学科博士点+博士后流动站 英特尔捐赠8英寸IC工艺线（原值4400万美元）" data-province="辽宁" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">大连理工大学</div>
+        <div class="college-name">集成电路学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">辽宁 · 大连（开发区校区）</span><span class="tag feat">教育部直属</span><span class="tag feat">东北地区唯一国家示范性微电子学院（2015筹建）</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/大连理工大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/山东大学_集成电路学院.html" data-search="山东大学 集成电路学院 985工程 211工程 双一流 教育部直属 山东 · 济南（软件园校区） 教育部集成电路领域"101"计划 "一生一芯"·"师徒制"培养模式" data-province="山东" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">山东大学</div>
+        <div class="college-name">集成电路学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">山东 · 济南（软件园校区）</span><span class="tag feat">教育部直属</span><span class="tag feat">教育部集成电路领域"101"计划</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/山东大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/国防科技大学_集成电路学院.html" data-search="国防科技大学 微电子学院 985工程 211工程 双一流 中央军委直属 湖南 · 长沙 军队唯一示范性微电子学院 学位授权自主审核单位（2024）" data-province="湖南" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">国防科技大学</div>
+        <div class="college-name">微电子学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">湖南 · 长沙</span><span class="tag feat">中央军委直属</span><span class="tag feat">军队唯一示范性微电子学院</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/国防科技大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/中山大学_集成电路学院.html" data-search="中山大学 电子与信息工程学院(微电子学院) 985工程 211工程 双一流 教育部直属 广东 · 广州/珠海/深圳三校区 电子科学与技术 双一流学科 国家示范性微电子学院（2015，26所之一） 国家集成电路人才培养基地" data-province="广东" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">中山大学</div>
+        <div class="college-name">电子与信息工程学院(微电子学院)</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">广东 · 广州/珠海/深圳三校区</span><span class="tag feat">教育部直属</span><span class="tag feat">电子科学与技术 双一流学科</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/中山大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/华南理工大学_集成电路学院.html" data-search="华南理工大学 微电子学院/集成电路学院 985工程 211工程 双一流 教育部直属 广东 · 广州国际校区 国家示范性微电子学院（2015筹建） 华南首个国家IC人才培养基地（2004） 集成电路科学与工程 一级学科博士点（2021，华南唯一首批）" data-province="广东" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">华南理工大学</div>
+        <div class="college-name">微电子学院/集成电路学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">广东 · 广州国际校区</span><span class="tag feat">教育部直属</span><span class="tag feat">国家示范性微电子学院（2015筹建）</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/华南理工大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/厦门大学_集成电路学院.html" data-search="厦门大学 电子科学与技术学院/集成电路学院 985工程 211工程 双一流 教育部直属 福建 · 厦门 国家集成电路产教融合创新平台（首批4所之一） 中国科学院院士 张荣" data-province="福建" data-level="985 211 双一流">
+      <div class="card-top">
+        <div class="school-name">厦门大学</div>
+        <div class="college-name">电子科学与技术学院/集成电路学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b91c1c;background:#fef2f2;border-color:#fecaca;">985</span><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">福建 · 厦门</span><span class="tag feat">教育部直属</span><span class="tag feat">国家集成电路产教融合创新平台（首批4所之一）</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/厦门大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/福州大学_集成电路学院.html" data-search="福州大学 微电子学院 211工程 双一流 教育部/国防科工局与福建省共建 福建 · 福州 国家集成电路人才培养基地 国家示范性微电子学院（2015年筹建）" data-province="福建" data-level="211 双一流">
+      <div class="card-top">
+        <div class="school-name">福州大学</div>
+        <div class="college-name">微电子学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#b45309;background:#fffbeb;border-color:#fde68a;">211</span><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">福建 · 福州</span><span class="tag feat">教育部/国防科工局与福建省共建</span><span class="tag feat">国家集成电路人才培养基地</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/福州大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+
+    <a class="card" href="pages/南方科技大学_集成电路学院.html" data-search="南方科技大学 深港微电子学院 双一流 非985/211（新型研究型大学） 广东 · 深圳 综合评价招生（631模式） 教育部未来通信集成电路工程研究中心 深港合作办学" data-province="广东" data-level="双一流">
+      <div class="card-top">
+        <div class="school-name">南方科技大学</div>
+        <div class="college-name">深港微电子学院</div>
+      </div>
+      <div class="card-tags"><span class="tag" style="color:#1d4ed8;background:#eff6ff;border-color:#bfdbfe;">双一流</span><span class="tag region">广东 · 深圳</span><span class="tag feat">非985/211（新型研究型大学）</span><span class="tag feat">综合评价招生（631模式）</span></div>
+      <div class="card-actions">
+        <span class="btn main">查看介绍 →</span>
+        <a class="btn pdf" href="pdf/南方科技大学_集成电路学院.pdf" download>下载PDF</a>
+      </div>
+    </a>
+    <div class="empty" id="empty">没有匹配的学校，试试换个关键词～</div>
+  </div>
+
+  <footer>数据来源：各高校官网、研究生院招生目录、当地考试院官网 · 数据截至 2026年8月 · 仅供参考</footer>
+
+  <div class="lock-mini"><a href="#" id="lockNow">🔒 锁定本站</a></div>
+
+<script>
+  /* ===== 口令验证 ===== */
+  var PW_HASH = '86689b15e9522a2a913ef9bfc73f00d042003744b203cb4cada71bc71f74954d';
+  var gate = document.getElementById('gate');
+  var gateBox = document.getElementById('gateBox');
+  var pwInput = document.getElementById('pwInput');
+  var pwBtn = document.getElementById('pwBtn');
+  var pwErr = document.getElementById('pwErr');
+  var remember = document.getElementById('remember');
+
+  function alreadyAuthed() {
+    try {
+      if (sessionStorage.getItem('ic28_auth') === '1') return true;
+      if (localStorage.getItem('ic28_auth_until') > String(Date.now())) return true;
+    } catch(e) {}
+    return false;
+  }
+
+  function unlock() {
+    gate.classList.add('hidden');
+    document.body.classList.remove('locked');
+  }
+
+  async function sha256Hex(str) {
+    var buf = new TextEncoder().encode(str);
+    var hash = await crypto.subtle.digest('SHA-256', buf);
+    return Array.prototype.map.call(new Uint8Array(hash), function(b) {
+      return ('0' + b.toString(16)).slice(-2);
+    }).join('');
+  }
+
+  async function tryUnlock() {
+    var pw = pwInput.value.trim();
+    if (!pw) { pwErr.textContent = '请输入口令'; return; }
+    var hex = await sha256Hex(pw);
+    if (hex === PW_HASH) {
+      try {
+        sessionStorage.setItem('ic28_auth', '1');
+        if (remember.checked) {
+          localStorage.setItem('ic28_auth_until', String(Date.now() + 7 * 24 * 3600 * 1000));
+        }
+      } catch(e) {}
+      unlock();
+    } else {
+      pwErr.textContent = '口令不正确，请重试';
+      gateBox.classList.remove('shake');
+      void gateBox.offsetWidth;
+      gateBox.classList.add('shake');
+      pwInput.value = '';
+      pwInput.focus();
+    }
+  }
+
+  if (alreadyAuthed()) { unlock(); }
+
+  pwBtn.addEventListener('click', tryUnlock);
+  pwInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') tryUnlock(); });
+  document.getElementById('lockNow').addEventListener('click', function(e) {
+    e.preventDefault();
+    try { sessionStorage.removeItem('ic28_auth'); localStorage.removeItem('ic28_auth_until'); } catch(e2) {}
+    pwInput.value = ''; pwErr.textContent = '';
+    gate.classList.remove('hidden');
+    document.body.classList.add('locked');
+  });
+
+  /* ===== 搜索与筛选 ===== */
+  var state = { keyword:'', province:'', level:'' };
+  var searchEl = document.getElementById('search');
+  var cards = Array.from(document.querySelectorAll('.card'));
+  var emptyEl = document.getElementById('empty');
+
+  function apply() {
+    var visible = 0;
+    cards.forEach(function(c) {
+      var kw = (c.dataset.search || '').toLowerCase();
+      var okKw = !state.keyword || kw.includes(state.keyword);
+      var okPv = !state.province || (c.dataset.province||'').includes(state.province);
+      var okLv = !state.level || (c.dataset.level||'').includes(state.level);
+      var show = okKw && okPv && okLv;
+      c.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    emptyEl.style.display = visible ? 'none' : 'block';
+  }
+
+  searchEl.addEventListener('input', function(e) { state.keyword = e.target.value.trim().toLowerCase(); apply(); });
+
+  document.querySelectorAll('.chip').forEach(function(ch) {
+    ch.addEventListener('click', function() {
+      var f = ch.dataset.filter, v = ch.dataset.value;
+      if (f === 'reset') {
+        state.province = ''; state.level = '';
+        searchEl.value = ''; state.keyword = '';
+        document.querySelectorAll('.chip').forEach(function(x) { x.classList.remove('active'); });
+        apply(); return;
+      }
+      document.querySelectorAll('.chip[data-filter="' + f + '"]').forEach(function(x) { x.classList.remove('active'); });
+      if (state[f] === v) { state[f] = ''; } else { state[f] = v; ch.classList.add('active'); }
+      apply();
+    });
+  });
+</script>
+</body>
+</html>

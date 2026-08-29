@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>北京大学 · 集成电路学院 — 全国28所示范性微电子学院介绍 (03/28)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @media print {
+    @page { size: 1140px 5500px; margin: 0; }
+    body { padding: 0; background: #fff; }
+    .card { box-shadow: none; border-radius: 0; max-width: 1140px; }
+  }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    padding: 20px;
+    line-height: 1.6;
+  }
+  .card {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  /* ========== Header ========== */
+  .header {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    padding: 36px 40px 28px;
+    color: #fff;
+    position: relative;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0; height: 6px;
+    background: linear-gradient(90deg, #ffd700, #ff8c00, #ff6b6b, #ffd700);
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+  @keyframes shimmer { 0% { background-position: 0% 0%; } 100% { background-position: 200% 0%; } }
+  .header-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .badge-series {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+  .badge-num {
+    font-size: 28px; font-weight: 700; opacity: 0.9;
+  }
+  .badge-num small { font-size: 14px; font-weight: 400; }
+  .header h1 {
+    font-size: 32px; font-weight: 700; margin-top: 14px;
+    letter-spacing: 2px;
+  }
+  .header .subtitle {
+    font-size: 15px; opacity: 0.85; margin-top: 6px;
+  }
+  .header-tags {
+    display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap;
+  }
+  .htag {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 6px;
+    padding: 3px 12px;
+    font-size: 13px;
+  }
+  .htag.gold { background: rgba(255,215,0,0.25); border-color: rgba(255,215,0,0.5); }
+
+  /* ========== Body ========== */
+  .body { padding: 28px 40px 36px; }
+  .section-title {
+    font-size: 16px; font-weight: 700;
+    color: #2575fc;
+    border-left: 4px solid #2575fc;
+    padding-left: 10px;
+    margin: 24px 0 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-title:first-child { margin-top: 0; }
+  .section-title .icon { font-size: 20px; }
+
+  /* ===== 院校层次（展开式） ===== */
+  .level-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .level-box { text-align: center; border-radius: 10px; padding: 14px 8px; border: 1px solid #e0e0e0; background: #fafafa; }
+  .level-box .lv-label { font-size: 12px; color: #888; margin-bottom: 4px; }
+  .level-box .lv-value { font-size: 15px; font-weight: 700; color: #1a1a2e; }
+  .level-box.hl { background: #e8f0ff; border-color: #2575fc; }
+  .level-box.gold { background: #fff8e1; border-color: #ffd700; }
+  .level-box.gold .lv-value { color: #b8860b; }
+  .eval-row { display: flex; gap: 16px; margin-top: 14px; }
+  .eval-card { flex: 1; border-radius: 10px; padding: 16px; text-align: center; }
+  .eval-card .grade { font-size: 36px; font-weight: 800; }
+  .eval-card .gname { font-size: 13px; color: #555; margin-top: 4px; }
+  .eval-card .gdetail { font-size: 11px; color: #999; margin-top: 2px; }
+  .eval-card.a-plus { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border: 1px solid #ff9800; }
+  .eval-card.a-plus .grade { color: #e65100; }
+  .eval-card.a-star { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border: 1px solid #4caf50; }
+  .eval-card.a-star .grade { color: #2e7d32; }
+
+  /* ===== 硕博士点 ===== */
+  .degree-table {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+  }
+  .degree-table th {
+    background: #f5f7fa; padding: 8px 10px; text-align: left;
+    font-weight: 600; color: #555; border-bottom: 2px solid #e0e0e0;
+  }
+  .degree-table td {
+    padding: 8px 10px; border-bottom: 1px solid #f0f0f0;
+  }
+  .degree-table tr:hover td { background: #f9f9f9; }
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+  .pill-dr { background: #e3f2fd; color: #1565c0; }
+  .pill-ms { background: #e8f5e9; color: #2e7d32; }
+  .pill-pd { background: #fce4ec; color: #c62828; }
+
+  /* ===== 时间线 ===== */
+  .timeline {
+    position: relative; padding-left: 24px;
+  }
+  .timeline::before {
+    content: ''; position: absolute; left: 7px; top: 4px; bottom: 4px;
+    width: 2px; background: linear-gradient(180deg, #6a11cb, #2575fc, #00b4d8);
+  }
+  .tl-item { position: relative; margin-bottom: 14px; }
+  .tl-item::before {
+    content: ''; position: absolute; left: -21px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: #fff; border: 3px solid #2575fc;
+  }
+  .tl-item.major::before { border-color: #6a11cb; background: #6a11cb; }
+  .tl-year { font-weight: 700; color: #2575fc; font-size: 14px; }
+  .tl-text { font-size: 13px; color: #444; }
+
+  /* ===== 侧重方向 ===== */
+  .focus-list {
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .focus-row {
+    display: flex; align-items: center; gap: 12px;
+    border-radius: 10px; padding: 10px 14px;
+    transition: transform 0.2s;
+  }
+  .focus-row:hover { transform: translateX(4px); }
+  .fr-rank {
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800; color: #fff; flex-shrink: 0;
+  }
+  .fr-name {
+    width: 130px; font-size: 14px; font-weight: 700; flex-shrink: 0;
+  }
+  .fr-stars { width: 80px; font-size: 16px; flex-shrink: 0; letter-spacing: 2px; }
+  .fr-desc { flex: 1; font-size: 12px; color: #666; }
+  .fr-tag {
+    font-size: 11px; padding: 2px 8px; border-radius: 4px;
+    font-weight: 600; flex-shrink: 0;
+  }
+  .fr-tier1 { background: linear-gradient(90deg, #e3f2fd, #bbdefb); border: 1px solid #42a5f5; }
+  .fr-tier1 .fr-rank { background: #1565c0; }
+  .fr-tier1 .fr-name { color: #0d47a1; }
+  .fr-tier1 .fr-tag { background: #e3f2fd; color: #1565c0; }
+  .fr-tier2 { background: #f1f8e9; border: 1px solid #9ccc65; }
+  .fr-tier2 .fr-rank { background: #558b2f; }
+  .fr-tier2 .fr-name { color: #33691e; }
+  .fr-tier2 .fr-tag { background: #f1f8e9; color: #558b2f; }
+  .fr-tier3 { background: #fafafa; border: 1px solid #e0e0e0; }
+  .fr-tier3 .fr-rank { background: #9e9e9e; }
+  .fr-tier3 .fr-name { color: #616161; }
+  .fr-tier3 .fr-tag { background: #f5f5f5; color: #9e9e9e; }
+  .star-on { color: #ffa726; }
+  .star-off { color: #e0e0e0; }
+
+  .chain-vis {
+    margin-top: 16px; padding: 16px;
+    background: #f8f9fc; border-radius: 10px; border: 1px solid #e8eaf0;
+  }
+  .chain-vis-title {
+    font-size: 13px; font-weight: 700; color: #555; margin-bottom: 12px;
+  }
+  .chain-stages {
+    display: flex; align-items: stretch; gap: 4px;
+  }
+  .chain-stage {
+    flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  }
+  .cs-bar-wrap {
+    width: 100%; height: 120px; display: flex; align-items: flex-end;
+    border-bottom: 2px solid #d0d0d0;
+  }
+  .cs-bar {
+    width: 70%; border-radius: 6px 6px 0 0; min-height: 8px;
+    display: flex; align-items: flex-start; justify-content: center;
+    padding-top: 4px; font-size: 10px; color: #fff; font-weight: 700;
+  }
+  .cs-label { font-size: 12px; font-weight: 600; color: #555; }
+  .cs-level { font-size: 10px; padding: 1px 6px; border-radius: 3px; font-weight: 600; }
+  .cs-level.hi { background: #e3f2fd; color: #1565c0; }
+  .cs-level.md { background: #fff3e0; color: #e65100; }
+  .cs-level.lo { background: #f5f5f5; color: #aaa; }
+
+  /* ===== 保研 / 考研 ===== */
+  .grad-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  .grad-card {
+    border-radius: 12px; padding: 18px; border: 1px solid #e0e0e0;
+  }
+  .grad-card.rate { background: #f0f4ff; border-color: #2575fc; }
+  .grad-card.study { background: #f0fff4; border-color: #4caf50; }
+  .grad-card .gc-title { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+  .rate-big { font-size: 42px; font-weight: 800; color: #2575fc; }
+  .rate-big small { font-size: 16px; font-weight: 600; }
+  .rate-detail { font-size: 12px; color: #666; margin-top: 6px; }
+  .study-big { font-size: 42px; font-weight: 800; color: #2e7d32; }
+  .study-big small { font-size: 16px; font-weight: 600; }
+  .study-detail { font-size: 12px; color: #666; margin-top: 6px; }
+
+  .dest-list { margin-top: 14px; }
+  .dest-title { font-size: 13px; font-weight: 700; color: #555; margin-bottom: 8px; }
+  .dest-items { display: flex; flex-wrap: wrap; gap: 6px; }
+  .dest-tag {
+    padding: 3px 10px; border-radius: 4px; font-size: 12px;
+    background: #f5f7fa; border: 1px solid #e0e0e0; color: #333;
+  }
+  .dest-tag.top { background: #e3f2fd; border-color: #42a5f5; color: #1565c0; font-weight: 600; }
+
+  /* ===== 就业 ===== */
+  .emp-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  .emp-region {
+    border-radius: 12px; padding: 16px; border: 1px solid #e0e0e0; background: #fff;
+  }
+  .emp-company {
+    border-radius: 12px; padding: 16px; border: 1px solid #e0e0e0; background: #fff;
+  }
+  .emp-title { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: #333; }
+  .region-bar-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .region-name { width: 50px; font-size: 13px; font-weight: 600; text-align: right; }
+  .region-track { flex: 1; height: 22px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+  .region-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; font-size: 11px; color: #fff; font-weight: 600; }
+  .company-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ctag {
+    padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+  }
+  .ctag.tier1 { background: #e3f2fd; color: #1565c0; border: 1px solid #42a5f5; }
+  .ctag.tier2 { background: #e8f5e9; color: #2e7d32; border: 1px solid #66bb6a; }
+  .ctag.tier3 { background: #fff3e0; color: #e65100; border: 1px solid #ffa726; }
+  .job-list { margin-top: 10px; font-size: 12px; color: #555; }
+  .job-list li { list-style: none; padding: 3px 0; }
+  .job-list li::before { content: '▸ '; color: #2575fc; }
+
+  /* ===== 薪酬 ===== */
+  .salary-chart {
+    display: flex; align-items: flex-end; gap: 16px; height: 200px;
+    padding: 16px 12px 0; border-bottom: 2px solid #e0e0e0; margin-bottom: 10px;
+  }
+  .sal-bar {
+    flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px;
+    height: 100%; justify-content: flex-end;
+  }
+  .sal-bar-fill {
+    width: 60%; min-height: 20px; border-radius: 6px 6px 0 0;
+    background: linear-gradient(180deg, #6a11cb, #2575fc);
+    display: flex; align-items: flex-start; justify-content: center;
+    padding-top: 6px; font-size: 11px; color: #fff; font-weight: 700;
+    transition: height 0.5s ease;
+  }
+  .sal-bar-label { font-size: 12px; color: #666; font-weight: 600; flex-shrink: 0; }
+  .sal-note { font-size: 12px; color: #888; text-align: center; }
+  .sal-highlight {
+    display: flex; gap: 12px; margin-top: 14px;
+  }
+  .sal-hl-card {
+    flex: 1; border-radius: 8px; padding: 12px; text-align: center; font-size: 12px;
+  }
+  .sal-hl-card .num { font-size: 20px; font-weight: 800; }
+  .sal-hl-card .desc { color: #888; margin-top: 4px; }
+  .sal-hl-card.c1 { background: #e3f2fd; }
+  .sal-hl-card.c1 .num { color: #1565c0; }
+  .sal-hl-card.c2 { background: #e8f5e9; }
+  .sal-hl-card.c2 .num { color: #2e7d32; }
+  .sal-hl-card.c3 { background: #fce4ec; }
+  .sal-hl-card.c3 .num { color: #c62828; }
+
+  /* ===== 录取位次 ===== */
+  .admit-table {
+    width: 100%; border-collapse: collapse; font-size: 12.5px;
+  }
+  .admit-table th {
+    background: #2575fc; color: #fff; padding: 9px 8px; text-align: left; font-weight: 600;
+  }
+  .admit-table th:first-child { border-radius: 8px 0 0 0; }
+  .admit-table th:last-child { border-radius: 0 8px 0 0; text-align: center; }
+  .admit-table td {
+    padding: 9px 8px; border-bottom: 1px solid #f0f0f0;
+  }
+  .admit-table td:last-child { text-align: center; }
+  .admit-table tr:hover td { background: #f5f9ff; }
+  .admit-table .highlight td { background: #fff8e1; font-weight: 600; }
+  .admit-table .yr-col { text-align: center; white-space: nowrap; }
+  .score-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-weight: 700; font-size: 12.5px;
+  }
+  .score-badge.hi { background: #e3f2fd; color: #1565c0; }
+  .score-badge.lo { background: #e8f5e9; color: #2e7d32; }
+  .score-badge.new { background: #fce4ec; color: #c62828; }
+  .rank-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-weight: 700; font-size: 12.5px; background: #f5f5f5; color: #333;
+  }
+  .rank-badge.new { background: #fce4ec; color: #c62828; }
+  .trend-up { color: #e53935; font-weight: 700; }
+  .trend-dn { color: #43a047; font-weight: 700; }
+  .trend-flat { color: #999; font-weight: 600; }
+  .admit-summary {
+    margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .admit-sum-card {
+    flex: 1; min-width: 200px; border-radius: 8px; padding: 12px; font-size: 12px;
+  }
+  .admit-sum-card.y25 { background: #e3f2fd; border: 1px solid #90caf9; }
+  .admit-sum-card.y26 { background: #fce4ec; border: 1px solid #f48fb1; }
+  .admit-sum-card .asc-title { font-weight: 700; margin-bottom: 6px; font-size: 13px; }
+  .admit-sum-card.y25 .asc-title { color: #1565c0; }
+  .admit-sum-card.y26 .asc-title { color: #c62828; }
+  .admit-sum-card .asc-row { display: flex; justify-content: space-between; padding: 2px 0; }
+  .admit-sum-card .asc-row b { font-weight: 700; }
+
+  /* ===== Footer ===== */
+  .footer {
+    padding: 16px 40px 20px; border-top: 1px solid #f0f0f0;
+    font-size: 11px; color: #aaa; text-align: center;
+  }
+  .footer strong { color: #888; }
+
+  /* ===== 国家级平台 ===== */
+  .platform-badges {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;
+  }
+  .plat-badge {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .plat-badge .star { color: #ffd700; }
+
+  @media (max-width: 768px) {
+    .level-grid { grid-template-columns: repeat(2, 1fr); }
+    .grad-grid, .emp-grid, .eval-row, .sal-highlight { grid-template-columns: 1fr; display: grid; }
+    .header h1 { font-size: 22px; }
+  }
+</style>
+<script>(function(){var ok=false;try{ok=sessionStorage.getItem('ic28_auth')==='1'||localStorage.getItem('ic28_auth_until')>String(Date.now());}catch(e){}if(!ok){location.replace('../index.html');}})();</script>
+</head>
+<body>
+
+<div class="card">
+
+  <!-- ========== Header ========== -->
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <h1>北京大学 · 集成电路学院</h1>
+        <div class="subtitle">Peking University · School of Integrated Circuits</div>
+      </div>
+      <div style="text-align:center;">
+        <div class="badge-series">全国示范性微电子学院</div>
+        <div class="badge-num" style="margin-top:8px;">03<small> / 28</small></div>
+      </div>
+    </div>
+    <div class="header-tags">
+      <span class="htag gold">985工程</span>
+      <span class="htag gold">211工程</span>
+      <span class="htag gold">双一流</span>
+      <span class="htag">教育部直属</span>
+      <span class="htag">北京 · 海淀</span>
+      <span class="htag">国家集成电路产教融合创新平台（全国首批）</span>
+      <span class="htag">国家示范性微电子学院（首批）</span>
+      <span class="htag">中国半导体学科发源地</span>
+    </div>
+    <div class="platform-badges">
+      <span class="plat-badge"><span class="star">★</span> 国家集成电路产教融合创新平台 (2019, 首批)</span>
+      <span class="plat-badge"><span class="star">★</span> 微纳电子器件与集成技术全国重点实验室 (2022, 首批标杆)</span>
+      <span class="plat-badge"><span class="star">★</span> 微米纳米加工技术全国重点实验室</span>
+      <span class="plat-badge"><span class="star">★</span> 集成电路高精尖创新中心 (2022)</span>
+      <span class="plat-badge"><span class="star">★</span> 集成电路科学与未来技术北京实验室</span>
+      <span class="plat-badge"><span class="star">★</span> 国家示范性微电子学院 (2015, 首批)</span>
+      <span class="plat-badge"><span class="star">★</span> 国家集成电路人才培养基地 (2003, 首批)</span>
+      <span class="plat-badge"><span class="star">★</span> 微电子学与固体电子学国家重点学科</span>
+    </div>
+  </div>
+
+  <!-- ========== Body ========== -->
+  <div class="body">
+
+    <!-- ===== 院校层次 & 学科评估 ===== -->
+    <div class="section-title"><span class="icon">🏛️</span> 院校层次与学科实力</div>
+    <div class="level-grid">
+      <div class="level-box hl"><div class="lv-label">院校层次</div><div class="lv-value">985 / 211 / 双一流</div></div>
+      <div class="level-box hl"><div class="lv-label">主管部门</div><div class="lv-value">教育部直属</div></div>
+      <div class="level-box gold"><div class="lv-label">集成电路学科评估</div><div class="lv-value">A+（全国前2%）</div></div>
+      <div class="level-box gold"><div class="lv-label">学科排名</div><div class="lv-value">全国顶尖</div></div>
+    </div>
+    <div class="eval-row">
+      <div class="eval-card a-plus"><div class="grade">A+</div><div class="gname">电子科学与技术</div><div class="gdetail">第五轮学科评估</div></div>
+      <div class="eval-card a-star"><div class="grade">A++</div><div class="gname">微电子科学与工程</div><div class="gdetail">国家级一流本科专业 · 中国半导体学科发源地</div></div>
+    </div>
+    <div style="font-size:12px;color:#888;margin-top:10px;">
+      北京大学是中国半导体、集成电路学科的重要起源地。1956年黄昆先生领衔创办"五校联合半导体专门化"，奠定了我国半导体科学技术研究的人才基础。学院现有教职工200余人，含院士2人、IEEE Fellow 3人，博士生导师69位。近五年申请专利900余项，获授权500余项。IEDM入选文章数连续五年全球高校第一（2025年位列全球第一），ISSCC 2023年获年度唯一最佳论文奖（国内70年来首次）。
+    </div>
+
+    <!-- ===== 硕博士点 ===== -->
+    <div class="section-title"><span class="icon">🎓</span> 硕博士点设置</div>
+    <table class="degree-table">
+      <thead>
+        <tr>
+          <th style="width:28%">学科 / 专业</th>
+          <th style="width:14%">类型</th>
+          <th style="width:10%">硕士</th>
+          <th style="width:10%">博士</th>
+          <th style="width:10%">博士后</th>
+          <th>备注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>集成电路科学与工程</td>
+          <td><span class="pill pill-dr">学术学位</span></td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>2021年获批全国首批一级交叉学科博士点；纳入"双一流"建设学科清单</td>
+        </tr>
+        <tr>
+          <td>微电子学与固体电子学</td>
+          <td><span class="pill pill-dr">学术学位</span></td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>国家重点学科；1990年获批博士学位授予点</td>
+        </tr>
+        <tr>
+          <td>电子信息（集成电路工程）</td>
+          <td><span class="pill pill-ms">专业学位</span></td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>—</td>
+          <td>2012年获批首批集成电路工程博士招生试点；与中芯国际等企业校企联合培养</td>
+        </tr>
+        <tr>
+          <td>电路与系统</td>
+          <td><span class="pill pill-dr">学术学位</span></td>
+          <td>✅</td>
+          <td>✅</td>
+          <td>—</td>
+          <td>隶属电子科学与技术一级学科</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-size:12px;color:#888;margin-top:6px;">
+      本科专业：微电子科学与工程（理学，国家级一流本科专业）、集成电路设计与集成系统（工学，国家级一流本科专业）、电子信息科学与技术（教育部卓越工程师计划专业）
+    </div>
+
+    <!-- ===== 专业建设时间 ===== -->
+    <div class="section-title"><span class="icon">📅</span> 专业建设历程</div>
+    <div class="timeline">
+      <div class="tl-item major">
+        <span class="tl-year">1956年</span>
+        <span class="tl-text"> — 黄昆先生领衔创办"五校联合半导体专门化"，我国半导体科学技术研究和人才培养的发源地</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1970年</span>
+        <span class="tl-text"> — 建立半导体专业</span>
+      </div>
+      <div class="tl-item major">
+        <span class="tl-year">1976年</span>
+        <span class="tl-text"> — 研制出中国第一块大规模集成电路——1024位DRAM，获全国科学大会奖</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1978年</span>
+        <span class="tl-text"> — 正式建立微电子专业</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1990年</span>
+        <span class="tl-text"> — 获批"微电子学与固体电子学"博士学位授予点</span>
+      </div>
+      <div class="tl-item major">
+        <span class="tl-year">2003年</span>
+        <span class="tl-text"> — 首批获批"国家集成电路人才培养基地"；全国率先开展集成电路专业硕士校企联合培养</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2012年</span>
+        <span class="tl-text"> — 获批国家首批集成电路工程博士招生试点单位</span>
+      </div>
+      <div class="tl-item major">
+        <span class="tl-year">2015年</span>
+        <span class="tl-text"> — 获批首批"国家示范性微电子学院"建设单位</span>
+      </div>
+      <div class="tl-item major">
+        <span class="tl-year">2019年</span>
+        <span class="tl-text"> — 获批建设"国家集成电路产教融合创新平台"（全国首批）</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2020年</span>
+        <span class="tl-text"> — "微电子科学与工程"入选国家一流本科专业建设名单</span>
+      </div>
+      <div class="tl-item major">
+        <span class="tl-year">2021年</span>
+        <span class="tl-text"> — <strong>集成电路学院正式成立</strong>；获批全国首批"集成电路科学与工程"一级学科博士学位授权点，纳入"双一流"建设学科清单</span>
+      </div>
+      <div class="tl-item major">
+        <span class="tl-year">2022年</span>
+        <span class="tl-text"> — 获批微纳电子器件与集成技术全国重点实验室（首批标杆）；获建集成电路高精尖创新中心</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2023年</span>
+        <span class="tl-text"> — ISSCC 2023年度唯一最佳论文奖（自1953年创办70年来国内首次获奖）</span>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2024–2025年</span>
+        <span class="tl-text"> — IEDM论文数连续五年全球高校第一（2025年位列全球第一）；ICCAD 2024年全球第一；IEEE MEMS 2025年全球第一</span>
+      </div>
+    </div>
+
+    <!-- ===== 侧重方向 ===== -->
+    <div class="section-title"><span class="icon">🔬</span> 侧重方向（按实力排序 · 芯片制造流程定位）</div>
+
+    <div class="focus-list">
+      <div class="focus-row fr-tier1">
+        <div class="fr-rank">1</div>
+        <div class="fr-name">微纳电子器件</div>
+        <div class="fr-stars"><span class="star-on">★★★</span></div>
+        <div class="fr-desc">新型存储器(RRAM/FeFET)、存算一体芯片(40nm RRAM多核芯片)、超低功耗器件；IEDM论文数连续五年全球高校第一，全国重点实验室</div>
+        <div class="fr-tag">核心王牌</div>
+      </div>
+      <div class="focus-row fr-tier1">
+        <div class="fr-rank">2</div>
+        <div class="fr-name">EDA工具</div>
+        <div class="fr-stars"><span class="star-on">★★★</span></div>
+        <div class="fr-desc">设计自动化与计算系统，牵头创建中国EDA开放创新合作机制(联盟)，与概伦电子共建EDA创新联合实验室；ICCAD 2024年论文数全球第一</div>
+        <div class="fr-tag">核心王牌</div>
+      </div>
+      <div class="focus-row fr-tier1">
+        <div class="fr-rank">3</div>
+        <div class="fr-name">高端芯片设计</div>
+        <div class="fr-stars"><span class="star-on">★★★</span></div>
+        <div class="fr-desc">SOC设计及设计方法学、模拟/数字集成电路设计；ISSCC 2023年度唯一最佳论文奖（70年来国内首次），2025年ISSCC论文数全球高校第一</div>
+        <div class="fr-tag">核心王牌</div>
+      </div>
+      <div class="focus-row fr-tier2">
+        <div class="fr-rank">4</div>
+        <div class="fr-name">MEMS与微系统</div>
+        <div class="fr-stars"><span class="star-on">★★</span><span class="star-off">★</span></div>
+        <div class="fr-desc">集成微纳系统(MEMS/NEMS)，IEEE MEMS 2025年论文数全球第一；拥有微米纳米加工技术全国重点实验室</div>
+        <div class="fr-tag">优势方向</div>
+      </div>
+      <div class="focus-row fr-tier2">
+        <div class="fr-rank">5</div>
+        <div class="fr-name">宽禁带半导体</div>
+        <div class="fr-stars"><span class="star-on">★★</span><span class="star-off">★</span></div>
+        <div class="fr-desc">GaN/SiC等第三代半导体器件及集成技术，多项成果写入国际半导体技术发展路线图</div>
+        <div class="fr-tag">优势方向</div>
+      </div>
+      <div class="focus-row fr-tier2">
+        <div class="fr-rank">6</div>
+        <div class="fr-name">先进制造技术</div>
+        <div class="fr-stars"><span class="star-on">★★</span><span class="star-off">★</span></div>
+        <div class="fr-desc">集成电路制造与先进封装，CMOS制造全流程实践课，与头部制造企业协同攻关自主可控前沿技术</div>
+        <div class="fr-tag">特色方向</div>
+      </div>
+      <div class="focus-row fr-tier3">
+        <div class="fr-rank">7</div>
+        <div class="fr-name">集成电路装备</div>
+        <div class="fr-stars"><span class="star-on">★</span><span class="star-off">★★</span></div>
+        <div class="fr-desc">半导体器件测试表征仪器研制，为工业部门重点装备研制提供微纳加工技术支撑</div>
+        <div class="fr-tag">一般方向</div>
+      </div>
+      <div class="focus-row fr-tier3">
+        <div class="fr-rank">8</div>
+        <div class="fr-name">集成电路材料</div>
+        <div class="fr-stars"><span class="star-on">★</span><span class="star-off">★★</span></div>
+        <div class="fr-desc">宽禁带材料与器件，新材料新工艺探索</div>
+        <div class="fr-tag">一般方向</div>
+      </div>
+    </div>
+
+    <div class="chain-vis">
+      <div class="chain-vis-title">芯片制造全流程侧重权重</div>
+      <div class="chain-stages">
+        <div class="chain-stage">
+          <div class="cs-bar-wrap">
+            <div class="cs-bar" style="height:50px; background:linear-gradient(180deg,#ffa726,#e65100);">中</div>
+          </div>
+          <div class="cs-label">材料</div>
+          <div class="cs-level md">中等</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap">
+            <div class="cs-bar" style="height:110px; background:linear-gradient(180deg,#42a5f5,#1565c0);">强</div>
+          </div>
+          <div class="cs-label">设计</div>
+          <div class="cs-level hi">核心</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap">
+            <div class="cs-bar" style="height:65px; background:linear-gradient(180deg,#ffa726,#e65100);">中</div>
+          </div>
+          <div class="cs-label">制造</div>
+          <div class="cs-level md">中等</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap">
+            <div class="cs-bar" style="height:55px; background:linear-gradient(180deg,#ffa726,#e65100);">中</div>
+          </div>
+          <div class="cs-label">封测</div>
+          <div class="cs-level md">中等</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap">
+            <div class="cs-bar" style="height:30px; background:linear-gradient(180deg,#bdbdbd,#9e9e9e);">弱</div>
+          </div>
+          <div class="cs-label">设备</div>
+          <div class="cs-level lo">非重点</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap">
+            <div class="cs-bar" style="height:95px; background:linear-gradient(180deg,#42a5f5,#1565c0);">强</div>
+          </div>
+          <div class="cs-label">应用集成</div>
+          <div class="cs-level hi">核心</div>
+        </div>
+      </div>
+      <div style="font-size:11px;color:#888;margin-top:10px;">
+        北大IC覆盖材料→设计→制造→封测→设备→应用全链条，核心强项集中在<b>芯片设计</b>（高端芯片/EDA/器件）与<b>应用集成</b>（存算一体/MEMS）环节。
+        在IEDM、ISSCC、ICCAD、IEEE MEMS、DAC等领域顶级国际会议论文数均居国际第一梯队，多项成果写入国际半导体技术发展路线图。与中芯国际累计培养硕士毕业生超300人。
+      </div>
+    </div>
+
+    <!-- ===== 保研率 & 考研率 ===== -->
+    <div class="section-title"><span class="icon">📈</span> 升学深造：保研率与考研率</div>
+    <div class="grad-grid">
+      <div class="grad-card rate">
+        <div class="gc-title">保研率（IC学院 · 2024届）</div>
+        <div class="rate-big">≈60<small>%</small></div>
+        <div class="rate-detail">IC学院2024届保研87人；全校校本部保研1168人，保研率约50%–55%；工科院系普遍偏高</div>
+      </div>
+      <div class="grad-card study">
+        <div class="gc-title">深造率（全校 · 2024届本科）</div>
+        <div class="study-big">≈84<small>%</small></div>
+        <div class="rate-detail">全校读研率66% + 出国率18%；IC学院就业率连续三年100%，其中超95%投身集成电路领域</div>
+      </div>
+    </div>
+
+    <div class="dest-list">
+      <div class="dest-title">外推深造院校（北大本科毕业生主要去向）</div>
+      <div class="dest-items">
+        <span class="dest-tag top">本校（北大）</span>
+        <span class="dest-tag top">清华大学</span>
+        <span class="dest-tag top">中国科学院大学</span>
+        <span class="dest-tag">中国科学院微电子所</span>
+        <span class="dest-tag">复旦大学</span>
+        <span class="dest-tag">上海交通大学</span>
+        <span class="dest-tag">浙江大学</span>
+        <span class="dest-tag">南京大学</span>
+        <span class="dest-tag">MIT / 斯坦福 / 伯克利（海外）</span>
+      </div>
+      <div style="font-size:12px;color:#888;margin-top:8px;">
+        IC学院近三年就业率保持100%，毕业生超95%投身集成电路领域；荣获"北京大学就业工作先进单位"称号。与华为合作密切，2022年起累计169名优秀研究生获华为奖学金。
+      </div>
+    </div>
+
+    <!-- ===== 就业方向 ===== -->
+    <div class="section-title"><span class="icon">💼</span> 就业方向</div>
+    <div class="emp-grid">
+      <div class="emp-region">
+        <div class="emp-title">就业地域分布（全校本科）</div>
+        <div class="region-bar-item">
+          <span class="region-name">北京</span>
+          <div class="region-track"><div class="region-fill" style="width:61%;background:#6a11cb;">61%</div></div>
+        </div>
+        <div class="region-bar-item">
+          <span class="region-name">上海</span>
+          <div class="region-track"><div class="region-fill" style="width:20%;background:#2575fc;">10%</div></div>
+        </div>
+        <div class="region-bar-item">
+          <span class="region-name">深圳</span>
+          <div class="region-track"><div class="region-fill" style="width:10%;background:#00b4d8;">5%</div></div>
+        </div>
+        <div class="region-bar-item">
+          <span class="region-name">广州</span>
+          <div class="region-track"><div class="region-fill" style="width:6%;background:#0096c7;">3%</div></div>
+        </div>
+        <div class="region-bar-item">
+          <span class="region-name">大连</span>
+          <div class="region-track"><div class="region-fill" style="width:2%;background:#48cae4;">1%</div></div>
+        </div>
+        <div style="font-size:11px;color:#aaa;margin-top:4px;">IC学院毕业生超95%投身集成电路产业</div>
+      </div>
+      <div class="emp-company">
+        <div class="emp-title">主要就业企业</div>
+        <div class="company-tags">
+          <span class="ctag tier1">华为（122人签约）</span>
+          <span class="ctag tier1">中芯国际</span>
+          <span class="ctag tier1">紫光展锐</span>
+          <span class="ctag tier2">中国科学院</span>
+          <span class="ctag tier2">中国电科</span>
+          <span class="ctag tier2">华为海思</span>
+          <span class="ctag tier3">腾讯</span>
+          <span class="ctag tier3">阿里巴巴</span>
+          <span class="ctag tier3">网易</span>
+        </div>
+        <div style="font-size:11px;color:#aaa;margin-top:6px;">■ 一线龙头 &nbsp; ■ 国防/科研 &nbsp; ■ 行业知名</div>
+        <div class="emp-title" style="margin-top:14px;">典型岗位</div>
+        <ul class="job-list">
+          <li>模拟/数字IC设计工程师</li>
+          <li>EDA工具开发工程师</li>
+          <li>新型存储器研发工程师</li>
+          <li>MEMS器件设计工程师</li>
+          <li>半导体工艺工程师</li>
+          <li>芯片架构师（3–5年经验）</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== 薪酬水平 ===== -->
+    <div class="section-title"><span class="icon">💰</span> 薪酬水平</div>
+    <div class="salary-chart">
+      <div class="sal-bar">
+        <div class="sal-bar-fill" style="height:57px;">9.1K</div>
+        <div class="sal-bar-label">应届（0年）</div>
+      </div>
+      <div class="sal-bar">
+        <div class="sal-bar-fill" style="height:76px;">12.1K</div>
+        <div class="sal-bar-label">2年</div>
+      </div>
+      <div class="sal-bar">
+        <div class="sal-bar-fill" style="height:107px;">17.1K</div>
+        <div class="sal-bar-label">5年</div>
+      </div>
+      <div class="sal-bar">
+        <div class="sal-bar-fill" style="height:150px;">24.0K</div>
+        <div class="sal-bar-label">10年</div>
+      </div>
+    </div>
+    <div class="sal-note">北大全校本科毕业生月薪中位数（元/月）· 数据来源：第三方就业平台</div>
+
+    <div class="sal-highlight">
+      <div class="sal-hl-card c1">
+        <div class="num">~15-20K</div>
+        <div class="desc">IC专业本科应届起薪（月）</div>
+      </div>
+      <div class="sal-hl-card c2">
+        <div class="num">40-60万</div>
+        <div class="desc">IC硕士年薪（中芯国际等）</div>
+      </div>
+      <div class="sal-hl-card c3">
+        <div class="num">50-80万</div>
+        <div class="desc">IC博士/资深研发岗（年）</div>
+      </div>
+    </div>
+    <div style="font-size:12px;color:#888;margin-top:10px;">
+      北大IC学院毕业生超95%投身集成电路领域，就业质量极高。与中芯国际累计培养硕士毕业生超300人，与华为累计169名研究生获华为奖学金。IC硕士年薪参考：华为海思芯片设计岗45–70万/年，中芯国际研发岗40–60万/年，EDA企业35–55万/年。
+    </div>
+
+    <!-- ===== 本省报考位次 ===== -->
+    <div class="section-title"><span class="icon">📊</span> 北京市报考专业组位次（2025–2026年 · 综合）</div>
+    <table class="admit-table">
+      <thead>
+        <tr>
+          <th>专业组</th>
+          <th>选科</th>
+          <th class="yr-col">2025最低分</th>
+          <th class="yr-col">2025位次</th>
+          <th class="yr-col">2026最低分</th>
+          <th class="yr-col">2026位次</th>
+          <th class="yr-col">趋势</th>
+          <th class="yr-col">备注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight">
+          <td>01组（元培/工商管理类）</td>
+          <td>不限</td>
+          <td class="yr-col"><span class="score-badge hi">686</span></td>
+          <td class="yr-col"><span class="rank-badge">419</span></td>
+          <td class="yr-col"><span class="score-badge new">688</span></td>
+          <td class="yr-col"><span class="rank-badge new">189</span></td>
+          <td class="yr-col"><span class="trend-up">分↑位↑</span></td>
+          <td class="yr-col">含元培学院</td>
+        </tr>
+        <tr>
+          <td>02组（不限）</td>
+          <td>不限</td>
+          <td class="yr-col"><span class="score-badge hi">697</span></td>
+          <td class="yr-col"><span class="rank-badge">136</span></td>
+          <td class="yr-col"><span class="score-badge new">680</span></td>
+          <td class="yr-col"><span class="rank-badge new">439</span></td>
+          <td class="yr-col"><span class="trend-dn">分↓位↓</span></td>
+          <td class="yr-col">文科类专业</td>
+        </tr>
+        <tr class="highlight">
+          <td>03组（物理+化学）</td>
+          <td>物+化</td>
+          <td class="yr-col"><span class="score-badge hi">687</span></td>
+          <td class="yr-col"><span class="rank-badge">385</span></td>
+          <td class="yr-col"><span class="score-badge new">680</span></td>
+          <td class="yr-col"><span class="rank-badge new">439</span></td>
+          <td class="yr-col"><span class="trend-dn">分↓位↓</span></td>
+          <td class="yr-col">含IC/电子/计算机</td>
+        </tr>
+        <tr>
+          <td>04组（提前批A段）</td>
+          <td>不限</td>
+          <td class="yr-col">—</td>
+          <td class="yr-col">—</td>
+          <td class="yr-col"><span class="score-badge new">673</span></td>
+          <td class="yr-col"><span class="rank-badge new">806</span></td>
+          <td class="yr-col">—</td>
+          <td class="yr-col">小语种</td>
+        </tr>
+        <tr>
+          <td>05组（提前批A段）</td>
+          <td>思政</td>
+          <td class="yr-col">—</td>
+          <td class="yr-col">—</td>
+          <td class="yr-col"><span class="score-badge new">673</span></td>
+          <td class="yr-col"><span class="rank-badge new">806</span></td>
+          <td class="yr-col">—</td>
+          <td class="yr-col">马克思主义理论</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="admit-summary">
+      <div class="admit-sum-card y25">
+        <div class="asc-title">2025年北京综合类</div>
+        <div class="asc-row"><span>01组（不限）最低</span><b>686分 / 419名</b></div>
+        <div class="asc-row"><span>02组（不限）最低</span><b>697分 / 136名</b></div>
+        <div class="asc-row"><span>03组（物+化）最低</span><b>687分 / 385名</b></div>
+        <div class="asc-row"><span>本科线</span><b>430分</b></div>
+      </div>
+      <div class="admit-sum-card y26">
+        <div class="asc-title">2026年北京综合类 <span style="font-size:10px;font-weight:400;">（北京教育考试院 7/20公布）</span></div>
+        <div class="asc-row"><span>01组（不限）最低</span><b>688分 / 189名</b></div>
+        <div class="asc-row"><span>02组（不限）最低</span><b>680分 / 439名</b></div>
+        <div class="asc-row"><span>03组（物+化）最低</span><b>680分 / 439名</b></div>
+        <div class="asc-row"><span>本科线</span><b>429分</b></div>
+      </div>
+    </div>
+
+    <div style="font-size:12px;color:#888;margin-top:10px;">
+      <strong>数据来源：</strong>2026年投档线来自<strong>北京教育考试院</strong>（7月20日公布）；专业分数来自掌上高考（gaokao.cn）及北京高考在线团队整理。<br>
+      <strong>趋势解读：</strong>2026年北大在京录取分数线总体下降。01组（元培/工商管理类）逆势上涨2分（686→688分），位次从419名跃升至189名，竞争加剧；02组（不限文科类）暴跌17分（697→680分），位次后退303名；03组（物+化）下降7分（687→680分），位次后移54名。主因2026年北京高分段考生人数明显下降（680分以上从685人降至439人）。<br>
+      <strong>报考参考（2026）：</strong>北京前190名可冲刺01组（元培学院）；前440名可报考03组（物+化，含集成电路/电子/计算机等理工科专业）。北大采用大类招生，集成电路学院通过03组招收本科生，大二分流确定专业。博雅计划/强基计划可提前批报考，分数低8–12分。
+    </div>
+
+  </div>
+
+  <!-- ========== Footer ========== -->
+  <div class="footer">
+    <strong>数据来源：</strong>北京大学集成电路学院官网（ic.pku.edu.cn）、北京大学本科招生网、教育部学科评估、北京大学2024届就业质量报告、北京教育考试院（2025–2026年投档数据）、掌上高考（gaokao.cn）、北京高考在线团队（gaokzx.com）<br>
+    部分薪资数据来源于第三方就业平台及行业薪资报告，仅供参考。保研率中IC学院数据为根据全校推免名单及公开报道推算。近三年就业率100%数据来源于学院华为奖学金颁奖仪式公开报道。<br>
+    全国集成电路28所示范性微电子学院介绍 · 第 03 所 / 共 28 所 · 2026年8月编制
+  </div>
+
+</div>
+
+
+<script>
+(function(){
+  var ok = false;
+  try { ok = sessionStorage.getItem('ic28_auth') === '1' || localStorage.getItem('ic28_auth_until') > String(Date.now()); } catch(e) {}
+  if (!ok) { location.replace('../index.html'); }
+})();
+</script>
+<div class="wb-nav-back" style="position:fixed;top:14px;left:14px;z-index:99999;">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;background:#1f3a8a;color:#fff;text-decoration:none;font-size:14px;padding:8px 16px;border-radius:999px;box-shadow:0 4px 12px rgba(0,0,0,.25);font-family:'Microsoft YaHei',sans-serif;">⌂ 返回首页</a>
+</div>
+
+</body>
+</html>

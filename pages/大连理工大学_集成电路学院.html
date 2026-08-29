@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大连理工大学 · 集成电路学院 — 全国28所示范性微电子学院介绍 (22/28)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @media print {
+    @page { size: 1140px 5500px; margin: 0; }
+    body { padding: 0; background: #fff; }
+    .card { box-shadow: none; border-radius: 0; max-width: 1140px; }
+  }
+  body { font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif; background: #f0f2f5; color: #1a1a2e; padding: 20px; line-height: 1.6; }
+  .card { max-width: 1100px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden; }
+  .header { background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); padding: 36px 40px 28px; color: #fff; position: relative; }
+  .header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #ffd700, #ff8c00, #ff6b6b, #ffd700); background-size: 200% 100%; animation: shimmer 3s linear infinite; }
+  @keyframes shimmer { 0% { background-position: 0% 0%; } 100% { background-position: 200% 0%; } }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .badge-series { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); border-radius: 20px; padding: 4px 14px; font-size: 13px; letter-spacing: 1px; }
+  .badge-num { font-size: 28px; font-weight: 700; opacity: 0.9; }
+  .badge-num small { font-size: 14px; font-weight: 400; }
+  .header h1 { font-size: 28px; font-weight: 700; margin-top: 14px; letter-spacing: 1px; }
+  .header .subtitle { font-size: 13px; opacity: 0.85; margin-top: 6px; }
+  .header-tags { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  .htag { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; padding: 3px 12px; font-size: 13px; }
+  .htag.gold { background: rgba(255,215,0,0.25); border-color: rgba(255,215,0,0.5); }
+  .body { padding: 28px 40px 36px; }
+  .section-title { font-size: 16px; font-weight: 700; color: #2575fc; border-left: 4px solid #2575fc; padding-left: 10px; margin: 24px 0 14px; display: flex; align-items: center; gap: 8px; }
+  .section-title:first-child { margin-top: 0; }
+  .section-title .icon { font-size: 20px; }
+  .level-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .level-box { text-align: center; border-radius: 10px; padding: 14px 8px; border: 1px solid #e0e0e0; background: #fafafa; }
+  .level-box .lv-label { font-size: 12px; color: #888; margin-bottom: 4px; }
+  .level-box .lv-value { font-size: 15px; font-weight: 700; color: #1a1a2e; }
+  .level-box.hl { background: #e8f0ff; border-color: #2575fc; }
+  .level-box.gold { background: #fff8e1; border-color: #ffd700; }
+  .level-box.gold .lv-value { color: #b8860b; }
+  .eval-row { display: flex; gap: 16px; margin-top: 14px; }
+  .eval-card { flex: 1; border-radius: 10px; padding: 16px; text-align: center; }
+  .eval-card .grade { font-size: 36px; font-weight: 800; }
+  .eval-card .gname { font-size: 13px; color: #555; margin-top: 4px; }
+  .eval-card .gdetail { font-size: 11px; color: #999; margin-top: 2px; }
+  .eval-card.a-plus { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border: 1px solid #ff9800; }
+  .eval-card.a-plus .grade { color: #e65100; }
+  .eval-card.a-star { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border: 1px solid #4caf50; }
+  .eval-card.a-star .grade { color: #2e7d32; }
+  .eval-card.b-grade { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border: 1px solid #42a5f5; }
+  .eval-card.b-grade .grade { color: #1565c0; }
+  .eval-card.first-batch { background: linear-gradient(135deg, #fce4ec, #f8bbd0); border: 1px solid #ec407a; }
+  .eval-card.first-batch .grade { color: #c62828; }
+  .degree-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .degree-table th { background: #f5f7fa; padding: 8px 10px; text-align: left; font-weight: 600; color: #555; border-bottom: 2px solid #e0e0e0; }
+  .degree-table td { padding: 8px 10px; border-bottom: 1px solid #f0f0f0; }
+  .degree-table tr:hover td { background: #f9f9f9; }
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+  .pill-dr { background: #e3f2fd; color: #1565c0; }
+  .pill-ms { background: #e8f5e9; color: #2e7d32; }
+  .pill-pd { background: #fce4ec; color: #c62828; }
+  .pill-ug { background: #fff3e0; color: #e65100; }
+  .pill-post { background: #f3e5f5; color: #7b1fa2; }
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before { content: ''; position: absolute; left: 7px; top: 4px; bottom: 4px; width: 2px; background: linear-gradient(180deg, #6a11cb, #2575fc, #00b4d8); }
+  .tl-item { position: relative; margin-bottom: 14px; }
+  .tl-item::before { content: ''; position: absolute; left: -21px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 3px solid #2575fc; }
+  .tl-item.major::before { border-color: #6a11cb; background: #6a11cb; }
+  .tl-year { font-weight: 700; color: #2575fc; font-size: 14px; }
+  .tl-text { font-size: 13px; color: #444; }
+  .focus-list { display: flex; flex-direction: column; gap: 8px; }
+  .focus-row { display: flex; align-items: center; gap: 12px; border-radius: 10px; padding: 10px 14px; transition: transform 0.2s; }
+  .focus-row:hover { transform: translateX(4px); }
+  .fr-rank { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: #fff; flex-shrink: 0; }
+  .fr-name { width: 150px; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+  .fr-stars { width: 80px; font-size: 16px; flex-shrink: 0; letter-spacing: 2px; }
+  .fr-desc { flex: 1; font-size: 12px; color: #666; }
+  .fr-tag { font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; flex-shrink: 0; }
+  .fr-tier1 { background: linear-gradient(90deg, #e3f2fd, #bbdefb); border: 1px solid #42a5f5; }
+  .fr-tier1 .fr-rank { background: #1565c0; } .fr-tier1 .fr-name { color: #0d47a1; } .fr-tier1 .fr-tag { background: #e3f2fd; color: #1565c0; }
+  .fr-tier2 { background: #f1f8e9; border: 1px solid #9ccc65; }
+  .fr-tier2 .fr-rank { background: #558b2f; } .fr-tier2 .fr-name { color: #33691e; } .fr-tier2 .fr-tag { background: #f1f8e9; color: #558b2f; }
+  .fr-tier3 { background: #fafafa; border: 1px solid #e0e0e0; }
+  .fr-tier3 .fr-rank { background: #9e9e9e; } .fr-tier3 .fr-name { color: #616161; } .fr-tier3 .fr-tag { background: #f5f5f5; color: #9e9e9e; }
+  .star-on { color: #ffa726; } .star-off { color: #e0e0e0; }
+  .chain-vis { margin-top: 16px; padding: 16px; background: #f8f9fc; border-radius: 10px; border: 1px solid #e8eaf0; }
+  .chain-vis-title { font-size: 13px; font-weight: 700; color: #555; margin-bottom: 12px; }
+  .chain-stages { display: flex; align-items: stretch; gap: 4px; }
+  .chain-stage { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .cs-bar-wrap { width: 100%; height: 120px; display: flex; align-items: flex-end; border-bottom: 2px solid #d0d0d0; }
+  .cs-bar { width: 70%; border-radius: 6px 6px 0 0; min-height: 8px; display: flex; align-items: flex-start; justify-content: center; padding-top: 4px; font-size: 10px; color: #fff; font-weight: 700; }
+  .cs-label { font-size: 12px; font-weight: 600; color: #555; }
+  .cs-level { font-size: 10px; padding: 1px 6px; border-radius: 3px; font-weight: 600; }
+  .cs-level.hi { background: #e3f2fd; color: #1565c0; }
+  .cs-level.md { background: #fff3e0; color: #e65100; }
+  .cs-level.lo { background: #f5f5f5; color: #aaa; }
+  .grad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grad-card { border-radius: 12px; padding: 18px; border: 1px solid #e0e0e0; }
+  .grad-card.rate { background: #f0f4ff; border-color: #2575fc; }
+  .grad-card.study { background: #f0fff4; border-color: #4caf50; }
+  .grad-card .gc-title { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+  .rate-big { font-size: 42px; font-weight: 800; color: #2575fc; }
+  .rate-big small { font-size: 16px; font-weight: 600; }
+  .rate-detail { font-size: 12px; color: #666; margin-top: 6px; }
+  .study-big { font-size: 42px; font-weight: 800; color: #2e7d32; }
+  .study-big small { font-size: 16px; font-weight: 600; }
+  .study-detail { font-size: 12px; color: #666; margin-top: 6px; }
+  .dest-list { margin-top: 14px; }
+  .dest-title { font-size: 13px; font-weight: 700; color: #555; margin-bottom: 8px; }
+  .dest-items { display: flex; flex-wrap: wrap; gap: 6px; }
+  .dest-tag { padding: 3px 10px; border-radius: 4px; font-size: 12px; background: #f5f7fa; border: 1px solid #e0e0e0; color: #333; }
+  .dest-tag.top { background: #e3f2fd; border-color: #42a5f5; color: #1565c0; font-weight: 600; }
+  .emp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .emp-region { border-radius: 12px; padding: 16px; border: 1px solid #e0e0e0; background: #fff; }
+  .emp-company { border-radius: 12px; padding: 16px; border: 1px solid #e0e0e0; background: #fff; }
+  .emp-title { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: #333; }
+  .region-bar-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .region-name { width: 50px; font-size: 13px; font-weight: 600; text-align: right; }
+  .region-track { flex: 1; height: 22px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+  .region-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; font-size: 11px; color: #fff; font-weight: 600; }
+  .company-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ctag { padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+  .ctag.tier1 { background: #e3f2fd; color: #1565c0; border: 1px solid #42a5f5; }
+  .ctag.tier2 { background: #e8f5e9; color: #2e7d32; border: 1px solid #66bb6a; }
+  .ctag.tier3 { background: #fff3e0; color: #e65100; border: 1px solid #ffa726; }
+  .job-list { margin-top: 10px; font-size: 12px; color: #555; }
+  .job-list li { list-style: none; padding: 3px 0; }
+  .job-list li::before { content: '▸ '; color: #2575fc; }
+  .salary-chart { display: flex; align-items: flex-end; gap: 16px; height: 200px; padding: 16px 12px 0; border-bottom: 2px solid #e0e0e0; margin-bottom: 10px; }
+  .sal-bar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; justify-content: flex-end; }
+  .sal-bar-fill { width: 60%; min-height: 20px; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #6a11cb, #2575fc); display: flex; align-items: flex-start; justify-content: center; padding-top: 6px; font-size: 11px; color: #fff; font-weight: 700; transition: height 0.5s ease; }
+  .sal-bar-label { font-size: 12px; color: #666; font-weight: 600; flex-shrink: 0; }
+  .sal-note { font-size: 12px; color: #888; text-align: center; }
+  .sal-highlight { display: flex; gap: 12px; margin-top: 14px; }
+  .sal-hl-card { flex: 1; border-radius: 8px; padding: 12px; text-align: center; font-size: 12px; }
+  .sal-hl-card .num { font-size: 20px; font-weight: 800; }
+  .sal-hl-card .desc { color: #888; margin-top: 4px; }
+  .sal-hl-card.c1 { background: #e3f2fd; } .sal-hl-card.c1 .num { color: #1565c0; }
+  .sal-hl-card.c2 { background: #e8f5e9; } .sal-hl-card.c2 .num { color: #2e7d32; }
+  .sal-hl-card.c3 { background: #fce4ec; } .sal-hl-card.c3 .num { color: #c62828; }
+  .admit-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .admit-table th { background: #2575fc; color: #fff; padding: 9px 8px; text-align: left; font-weight: 600; }
+  .admit-table th:first-child { border-radius: 8px 0 0 0; }
+  .admit-table th:last-child { border-radius: 0 8px 0 0; text-align: center; }
+  .admit-table td { padding: 9px 8px; border-bottom: 1px solid #f0f0f0; }
+  .admit-table td:last-child { text-align: center; }
+  .admit-table tr:hover td { background: #f5f9ff; }
+  .admit-table .highlight td { background: #fff8e1; font-weight: 600; }
+  .admit-table .yr-col { text-align: center; white-space: nowrap; }
+  .score-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 12.5px; }
+  .score-badge.hi { background: #e3f2fd; color: #1565c0; }
+  .score-badge.lo { background: #e8f5e9; color: #2e7d32; }
+  .score-badge.new { background: #fce4ec; color: #c62828; }
+  .rank-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 12.5px; background: #f5f5f5; color: #333; }
+  .rank-badge.new { background: #fce4ec; color: #c62828; }
+  .trend-up { color: #e53935; font-weight: 700; }
+  .trend-dn { color: #43a047; font-weight: 700; }
+  .trend-flat { color: #999; font-weight: 600; }
+  .admit-summary { margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .admit-sum-card { flex: 1; min-width: 200px; border-radius: 8px; padding: 12px; font-size: 12px; }
+  .admit-sum-card.y25 { background: #e3f2fd; border: 1px solid #90caf9; }
+  .admit-sum-card.y26 { background: #fce4ec; border: 1px solid #f48fb1; }
+  .admit-sum-card .asc-title { font-weight: 700; margin-bottom: 6px; font-size: 13px; }
+  .admit-sum-card.y25 .asc-title { color: #1565c0; }
+  .admit-sum-card.y26 .asc-title { color: #c62828; }
+  .admit-sum-card .asc-row { display: flex; justify-content: space-between; padding: 2px 0; }
+  .admit-sum-card .asc-row b { font-weight: 700; }
+  .footer { padding: 16px 40px 20px; border-top: 1px solid #f0f0f0; font-size: 11px; color: #aaa; text-align: center; }
+  .footer strong { color: #888; }
+  .platform-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .plat-badge { background: linear-gradient(135deg, #6a11cb, #2575fc); color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+  .plat-badge .star { color: #ffd700; }
+  .info-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+  .info-card { border-radius: 10px; padding: 16px; border: 1px solid #e0e0e0; text-align: center; }
+  .info-card .ic-num { font-size: 28px; font-weight: 800; color: #2575fc; }
+  .info-card .ic-label { font-size: 12px; color: #888; margin-top: 4px; }
+  .info-card .ic-detail { font-size: 11px; color: #aaa; margin-top: 2px; }
+  .info-card.green { background: #f0fff4; border-color: #4caf50; }
+  .info-card.green .ic-num { color: #2e7d32; }
+  .info-card.orange { background: #fff8e1; border-color: #ffd700; }
+  .info-card.orange .ic-num { color: #b8860b; }
+  .info-card.blue { background: #e8f0ff; border-color: #2575fc; }
+  .platform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+  .platform-card { border-radius: 10px; padding: 14px; border: 1px solid #e0e0e0; background: #fafafa; }
+  .platform-card .pc-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .platform-card .pc-list { font-size: 12px; color: #666; }
+  .platform-card .pc-list li { list-style: none; padding: 3px 0; }
+  .platform-card .pc-list li::before { content: '▸ '; color: #2575fc; }
+  @media (max-width: 768px) {
+    .level-grid { grid-template-columns: repeat(2, 1fr); }
+    .grad-grid, .emp-grid, .eval-row, .sal-highlight, .info-cards, .platform-grid { grid-template-columns: 1fr; display: grid; }
+    .header h1 { font-size: 22px; }
+  }
+</style>
+<script>(function(){var ok=false;try{ok=sessionStorage.getItem('ic28_auth')==='1'||localStorage.getItem('ic28_auth_until')>String(Date.now());}catch(e){}if(!ok){location.replace('../index.html');}})();</script>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <h1>大连理工大学 · 集成电路学院</h1>
+        <div class="subtitle">Dalian University of Technology · School of Integrated Circuits | 东北地区唯一国家示范性微电子学院 · 英特尔8英寸工艺线</div>
+      </div>
+      <div style="text-align:center;">
+        <div class="badge-series">全国示范性微电子学院</div>
+        <div class="badge-num" style="margin-top:8px;">22<small> / 28</small></div>
+      </div>
+    </div>
+    <div class="header-tags">
+      <span class="htag gold">985工程</span>
+      <span class="htag gold">211工程</span>
+      <span class="htag gold">双一流</span>
+      <span class="htag">教育部直属</span>
+      <span class="htag">辽宁 · 大连（开发区校区）</span>
+      <span class="htag">东北地区唯一国家示范性微电子学院（2015筹建）</span>
+      <span class="htag">集成电路科学与工程 一级学科博士点+博士后流动站</span>
+      <span class="htag">英特尔捐赠8英寸IC工艺线（原值4400万美元）</span>
+    </div>
+    <div class="platform-badges">
+      <span class="plat-badge"><span class="star">★</span> 国家示范性微电子学院 (2015筹建，17所之一)</span>
+      <span class="plat-badge"><span class="star">★</span> 国家集成电路人才培养基地</span>
+      <span class="plat-badge"><span class="star">★</span> 国家集成电路人才国际培训(大连)基地</span>
+      <span class="plat-badge"><span class="star">★</span> 英特尔8英寸IC工艺线 (原值4400万美元)</span>
+      <span class="plat-badge"><span class="star">★</span> 大连理工大学—IMEC创研基地</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <!-- 1. 院校层次 -->
+    <div class="section-title"><span class="icon">🏫</span> 院校层次与基本情况</div>
+    <div class="level-grid">
+      <div class="level-box gold"><div class="lv-label">院校层次</div><div class="lv-value">985 / 211 / 双一流</div></div>
+      <div class="level-box"><div class="lv-label">主管部门</div><div class="lv-value">教育部直属</div></div>
+      <div class="level-box hl"><div class="lv-label">所在校区</div><div class="lv-value">大连·开发区校区</div></div>
+      <div class="level-box"><div class="lv-label">学院建制</div><div class="lv-value">集成电路学院（2023年10月更名）</div></div>
+    </div>
+    <div class="eval-row">
+      <div class="eval-card b-grade">
+        <div class="grade">B</div>
+        <div class="gname">电子科学与技术</div>
+        <div class="gdetail">第五轮学科评估 · 一级学科博士点</div>
+      </div>
+      <div class="eval-card first-batch">
+        <div class="grade">首批</div>
+        <div class="gname">集成电路科学与工程</div>
+        <div class="gdetail">一级学科博士点 + 博士后流动站</div>
+      </div>
+      <div class="eval-card a-star">
+        <div class="grade">96%</div>
+        <div class="gname">就业率</div>
+        <div class="gdetail">全校就业率 · IC毕业生供不应求</div>
+      </div>
+    </div>
+
+    <!-- 2. 历史沿革 -->
+    <div class="section-title"><span class="icon">📜</span> 历史沿革</div>
+    <div class="timeline">
+      <div class="tl-item major">
+        <span class="tl-year">2015年</span>
+        <div class="tl-text">教育部等六部门发布关于支持相关高校建设示范性微电子学院的通知 —— 大连理工大学成为17所筹建高校之一，<strong>东北地区唯一</strong>筹建的国家示范性微电子学院</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2015年</span>
+        <div class="tl-text">微电子学院成立，依托电子科学与技术学科，位于大连开发区校区</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">—</span>
+        <div class="tl-text">获得英特尔公司捐赠8英寸集成电路生产工艺线（原值4400万美元），建成大连半导体技术学院</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">—</span>
+        <div class="tl-text">与比利时IMEC合作建立大连理工大学—IMEC创研基地</div>
+      </div>
+      <div class="tl-item major">
+        <span class="tl-year">2023年10月</span>
+        <div class="tl-text">微电子学院正式更名为<strong>集成电路学院</strong> —— 进入新发展阶段</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">—</span>
+        <div class="tl-text">获批集成电路科学与工程一级学科博士点及博士后流动站</div>
+      </div>
+    </div>
+
+    <!-- 3. 学科评估 -->
+    <div class="section-title"><span class="icon">📊</span> 学科评估与学科实力</div>
+    <div class="level-grid">
+      <div class="level-box"><div class="lv-label">电子科学与技术</div><div class="lv-value">B（第五轮）</div></div>
+      <div class="level-box hl"><div class="lv-label">集成电路科学与工程</div><div class="lv-value">一级学科博士点</div></div>
+      <div class="level-box"><div class="lv-label">博士后流动站</div><div class="lv-value">2个</div></div>
+      <div class="level-box gold"><div class="lv-label">国家一流本科专业</div><div class="lv-value">集成电路设计与集成系统</div></div>
+    </div>
+    <div class="info-cards">
+      <div class="info-card blue">
+        <div class="ic-num">2个</div>
+        <div class="ic-label">一级学科博士点</div>
+        <div class="ic-detail">电子科学与技术 / 集成电路科学与工程</div>
+      </div>
+      <div class="info-card green">
+        <div class="ic-num">2个</div>
+        <div class="ic-label">博士后流动站</div>
+        <div class="ic-detail">电子科学与技术 / 集成电路科学与工程</div>
+      </div>
+      <div class="info-card orange">
+        <div class="ic-num">$44M</div>
+        <div class="ic-label">英特尔工艺线</div>
+        <div class="ic-detail">8英寸IC生产工艺线（原值4400万美元）</div>
+      </div>
+    </div>
+
+    <!-- 4. 学位项目 -->
+    <div class="section-title"><span class="icon">🎓</span> 学位项目与培养体系</div>
+    <table class="degree-table">
+      <thead>
+        <tr><th>层次</th><th>专业名称</th><th>类型</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="pill pill-ug">本科</span></td><td>电子科学与技术</td><td>工学</td><td>国家卓越工程师教育培养计划 / 辽宁省优势特色专业 / 2013年省评第一</td></tr>
+        <tr><td><span class="pill pill-ug">本科</span></td><td>集成电路设计与集成系统</td><td>工学</td><td>国家一流专业 / 教育部特色专业 / 首批国家卓越工程师计划</td></tr>
+        <tr><td><span class="pill pill-ug">本科</span></td><td>电子信息材料</td><td>工学</td><td>电子科学与技术大类含（学域培养）</td></tr>
+        <tr><td><span class="pill pill-ms">硕士</span></td><td>电子科学与技术</td><td>学术硕士</td><td>一级学科硕士点（含微电子学与固体电子学、物理电子学、电路与系统）</td></tr>
+        <tr><td><span class="pill pill-ms">硕士</span></td><td>集成电路科学与工程（140100）</td><td>学术硕士</td><td>交叉学科硕士点</td></tr>
+        <tr><td><span class="pill pill-ms">硕士</span></td><td>集成电路工程</td><td>专业硕士</td><td>全日制/非全日制工程硕士</td></tr>
+        <tr><td><span class="pill pill-dr">博士</span></td><td>电子科学与技术</td><td>学术博士</td><td>一级学科博士点</td></tr>
+        <tr><td><span class="pill pill-dr">博士</span></td><td>集成电路科学与工程</td><td>学术博士</td><td><strong>一级学科博士点（交叉学科）</strong></td></tr>
+        <tr><td><span class="pill pill-dr">博士</span></td><td>电子信息</td><td>工程博士</td><td>专业学位博士（集成电路工程方向）</td></tr>
+        <tr><td><span class="pill pill-post">博士后</span></td><td>电子科学与技术</td><td>流动站</td><td>博士后科研流动站</td></tr>
+        <tr><td><span class="pill pill-post">博士后</span></td><td>集成电路科学与工程</td><td>流动站</td><td>博士后科研流动站</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:12px; color:#666; margin-top:10px;">
+      ▸ <strong>学域培养</strong>：电子科学与技术与软件工程、智能无人系统技术同学域培养，专业分流在上述专业内任选<br>
+      ▸ <strong>求实书院</strong>：基于信息技术学域培养，涉及软件工程和集成电路两个专业大类
+    </div>
+
+    <!-- 5. 研究方向 -->
+    <div class="section-title"><span class="icon">🔬</span> 重点研究方向</div>
+    <div class="focus-list">
+      <div class="focus-row fr-tier1">
+        <div class="fr-rank">1</div>
+        <div class="fr-name">第三代半导体材料与器件</div>
+        <div class="fr-stars">★★★</div>
+        <div class="fr-desc">GaN/SiC材料与器件、宽禁带半导体集成与系统，大连市宽禁带半导体器件集成与系统重点实验室</div>
+        <div class="fr-tag">核心优势</div>
+      </div>
+      <div class="focus-row fr-tier1">
+        <div class="fr-rank">2</div>
+        <div class="fr-name">集成电路制造工艺</div>
+        <div class="fr-stars">★★★</div>
+        <div class="fr-desc">依托英特尔8英寸工艺线（原值4400万美元），国内高校罕见的完整IC制造工艺研发能力</div>
+        <div class="fr-tag">独特优势</div>
+      </div>
+      <div class="focus-row fr-tier1">
+        <div class="fr-rank">3</div>
+        <div class="fr-name">海洋智能系统与高端芯片</div>
+        <div class="fr-stars">★★★</div>
+        <div class="fr-desc">辽宁省海洋智能系统与高端芯片工程研究中心，面向海洋电子信息特色方向</div>
+        <div class="fr-tag">区域特色</div>
+      </div>
+      <div class="focus-row fr-tier2">
+        <div class="fr-rank">4</div>
+        <div class="fr-name">光电子-电力电子器件</div>
+        <div class="fr-stars">★★</div>
+        <div class="fr-desc">大连光电技术研发中心，以第三代半导体材料为基础的光电子与电力电子器件研究</div>
+        <div class="fr-tag">重点方向</div>
+      </div>
+      <div class="focus-row fr-tier2">
+        <div class="fr-rank">5</div>
+        <div class="fr-name">集成电路设计</div>
+        <div class="fr-stars">★★</div>
+        <div class="fr-desc">模拟/数字IC设计、射频电路、混合信号芯片，辽宁省集成电路设计服务公共平台</div>
+        <div class="fr-tag">重点方向</div>
+      </div>
+      <div class="focus-row fr-tier2">
+        <div class="fr-rank">6</div>
+        <div class="fr-name">集成电路技术与应用</div>
+        <div class="fr-stars">★★</div>
+        <div class="fr-desc">辽宁省"集成电路技术"重点实验室，覆盖设计-工艺-封测全流程</div>
+        <div class="fr-tag">重点方向</div>
+      </div>
+      <div class="focus-row fr-tier3">
+        <div class="fr-rank">7</div>
+        <div class="fr-name">电子信息材料</div>
+        <div class="fr-stars">★</div>
+        <div class="fr-desc">新型半导体材料、功能材料基础研究</div>
+        <div class="fr-tag">支撑方向</div>
+      </div>
+    </div>
+
+    <!-- 6. 产业链覆盖 -->
+    <div class="section-title"><span class="icon">🔗</span> 集成电路产业链覆盖</div>
+    <div class="chain-vis">
+      <div class="chain-vis-title">大连理工大学 — 材料+制造特色链条布局（英特尔8英寸工艺线为国内高校罕见，侧重重第三代半导体与海洋芯片）</div>
+      <div class="chain-stages">
+        <div class="chain-stage">
+          <div class="cs-bar-wrap"><div class="cs-bar" style="height:50px; background: linear-gradient(180deg, #42a5f5, #1565c0);">中强</div></div>
+          <div class="cs-label">材料</div>
+          <div class="cs-level hi">中强</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap"><div class="cs-bar" style="height:50px; background: linear-gradient(180deg, #66bb6a, #43a047);">中</div></div>
+          <div class="cs-label">设计</div>
+          <div class="cs-level md">中</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap"><div class="cs-bar" style="height:55px; background: linear-gradient(180deg, #42a5f5, #1565c0);">中强</div></div>
+          <div class="cs-label">制造</div>
+          <div class="cs-level hi">中强</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap"><div class="cs-bar" style="height:30px; background: linear-gradient(180deg, #66bb6a, #43a047);">中</div></div>
+          <div class="cs-label">封测</div>
+          <div class="cs-level md">中</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap"><div class="cs-bar" style="height:12px; background: linear-gradient(180deg, #bdbdbd, #9e9e9e);">弱</div></div>
+          <div class="cs-label">设备</div>
+          <div class="cs-level lo">弱</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap"><div class="cs-bar" style="height:55px; background: linear-gradient(180deg, #42a5f5, #1565c0);">中强</div></div>
+          <div class="cs-label">应用集成</div>
+          <div class="cs-level hi">中强</div>
+        </div>
+      </div>
+    </div>
+    <div style="font-size:12px; color:#888; margin-top:10px;">
+      ▸ <strong>材料</strong>：第三代半导体（GaN/SiC）、电子信息材料、宽禁带半导体　▸ <strong>设计</strong>：模拟/数字IC、射频电路　▸ <strong>制造</strong>：英特尔8英寸工艺线（国内高校罕见，原值4400万美元）　▸ <strong>封测</strong>：封装测试　▸ <strong>应用集成</strong>：海洋智能系统、高端芯片、光电子器件、电力电子器件
+    </div>
+
+    <!-- 7. 师资与学生 -->
+    <div class="section-title"><span class="icon">👨‍🏫</span> 师资队伍与学生规模</div>
+    <div class="info-cards">
+      <div class="info-card blue">
+        <div class="ic-num">35人</div>
+        <div class="ic-label">教职工总数</div>
+        <div class="ic-detail">正高级7人 · 副高级14人 · 博导13人 · 硕导20余人</div>
+      </div>
+      <div class="info-card green">
+        <div class="ic-num">950</div>
+        <div class="ic-label">在校生规模</div>
+        <div class="ic-detail">本科生650人 · 研究生300人</div>
+      </div>
+      <div class="info-card orange">
+        <div class="ic-num">61%</div>
+        <div class="ic-label">本科读研率</div>
+        <div class="ic-detail">全校读研率61% · 出国率9%</div>
+      </div>
+    </div>
+    <div class="platform-grid">
+      <div class="platform-card">
+        <div class="pc-title">高层次人才</div>
+        <ul class="pc-list">
+          <li>国家级青年人才 2人</li>
+          <li>教育部新世纪优秀人才 1人</li>
+          <li>国家"香江学者"计划 1人</li>
+          <li>博士生导师 13人</li>
+          <li>硕士生导师 20余人</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="pc-title">教学科研平台</div>
+        <ul class="pc-list">
+          <li>国家集成电路人才培养基地</li>
+          <li>国家集成电路人才国际培训(大连)基地</li>
+          <li>大连理工大学—IMEC创研基地（与比利时IMEC合作）</li>
+          <li>英特尔8英寸IC生产工艺线（原值4400万美元）</li>
+          <li>国家级工程实践教育中心</li>
+          <li>国家电工电子实验教学示范中心</li>
+          <li>辽宁省海洋智能系统与高端芯片工程研究中心</li>
+          <li>辽宁省"集成电路技术"重点实验室</li>
+          <li>辽宁省"集成电路设计服务公共平台"</li>
+          <li>大连市宽禁带半导体器件集成与系统重点实验室</li>
+          <li>大连光电技术研发中心</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 8. 升学就业 -->
+    <div class="section-title"><span class="icon">📈</span> 升学与就业</div>
+    <div class="grad-grid">
+      <div class="grad-card rate">
+        <div class="gc-title">本科读研率</div>
+        <div class="rate-big">61<small>%</small></div>
+        <div class="rate-detail">全校本科毕业生读研率61%，出国深造率9%</div>
+      </div>
+      <div class="grad-card study">
+        <div class="gc-title">就业率</div>
+        <div class="study-big">96<small>%</small></div>
+        <div class="rate-detail">全校就业率96% · 国有企业33% · 三资企业11%</div>
+      </div>
+    </div>
+    <div class="dest-list">
+      <div class="dest-title">主要深造去向</div>
+      <div class="dest-items">
+        <span class="dest-tag top">本校保研/直博</span>
+        <span class="dest-tag top">清华大学</span>
+        <span class="dest-tag top">北京大学</span>
+        <span class="dest-tag">中国科学院大学</span>
+        <span class="dest-tag">复旦大学</span>
+        <span class="dest-tag">上海交通大学</span>
+        <span class="dest-tag">浙江大学</span>
+        <span class="dest-tag">电子科技大学</span>
+        <span class="dest-tag">IMEC（比利时联合培养）</span>
+        <span class="dest-tag">海外名校</span>
+      </div>
+    </div>
+
+    <div class="emp-grid" style="margin-top: 16px;">
+      <div class="emp-region">
+        <div class="emp-title">就业地域分布</div>
+        <div class="region-bar-item">
+          <div class="region-name">大连</div>
+          <div class="region-track"><div class="region-fill" style="width: 28%; background: #2575fc;">28%</div></div>
+        </div>
+        <div class="region-bar-item">
+          <div class="region-name">北京</div>
+          <div class="region-track"><div class="region-fill" style="width: 16%; background: #6a11cb;">16%</div></div>
+        </div>
+        <div class="region-bar-item">
+          <div class="region-name">上海</div>
+          <div class="region-track"><div class="region-fill" style="width: 12%; background: #00b4d8;">12%</div></div>
+        </div>
+        <div class="region-bar-item">
+          <div class="region-name">沈阳</div>
+          <div class="region-track"><div class="region-fill" style="width: 9%; background: #43a047;">9%</div></div>
+        </div>
+        <div class="region-bar-item">
+          <div class="region-name">深圳</div>
+          <div class="region-track"><div class="region-fill" style="width: 5%; background: #ffa726;">5%</div></div>
+        </div>
+      </div>
+      <div class="emp-company">
+        <div class="emp-title">主要就业单位</div>
+        <div class="company-tags">
+          <span class="ctag tier1">中电科47所</span>
+          <span class="ctag tier1">SK海力士(大连)</span>
+          <span class="ctag tier1">中芯国际</span>
+          <span class="ctag tier1">长江存储</span>
+          <span class="ctag tier1">长鑫存储</span>
+          <span class="ctag tier2">圣邦微电子</span>
+          <span class="ctag tier2">长光辰芯</span>
+          <span class="ctag tier2">华为 (36人)</span>
+          <span class="ctag tier2">中兴通讯</span>
+          <span class="ctag tier2">京东方</span>
+          <span class="ctag tier3">英特尔</span>
+          <span class="ctag tier3">中国建筑 (110人)</span>
+          <span class="ctag tier3">中国航空工业 (29人)</span>
+          <span class="ctag tier3">国家电网 (16人)</span>
+          <span class="ctag tier3">中国中车 (13人)</span>
+          <span class="ctag tier3">中国核工业 (23人)</span>
+        </div>
+        <ul class="job-list">
+          <li>集成电路设计/制造/封测/装备/信息技术全行业覆盖</li>
+          <li>东北地区IC产业核心人才输送高校</li>
+          <li>英特尔大连工厂（SK海力士收购）重要人才来源</li>
+          <li>与比利时IMEC建立创研基地，国际联合培养</li>
+          <li>国有企业33%就业比例，三资企业11%</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 9. 薪酬与录取 -->
+    <div class="section-title"><span class="icon">💰</span> 薪酬水平</div>
+    <div class="salary-chart">
+      <div class="sal-bar">
+        <div class="sal-bar-fill" style="height: 46px;">7.6K</div>
+        <div class="sal-bar-label">应届 0年</div>
+      </div>
+      <div class="sal-bar">
+        <div class="sal-bar-fill" style="height: 61px;">10.2K</div>
+        <div class="sal-bar-label">工作 2年</div>
+      </div>
+      <div class="sal-bar">
+        <div class="sal-bar-fill" style="height: 85px;">14.1K</div>
+        <div class="sal-bar-label">工作 5年</div>
+      </div>
+      <div class="sal-bar">
+        <div class="sal-bar-fill" style="height: 119px;">19.9K</div>
+        <div class="sal-bar-label">工作 10年</div>
+      </div>
+    </div>
+    <div class="sal-note">数据来源：大连理工大学本科就业去向统计 · 单位：元/月（月薪均值）</div>
+    <div class="sal-highlight">
+      <div class="sal-hl-card c1">
+        <div class="num">7.6K</div>
+        <div class="desc">应届起薪（月薪）</div>
+      </div>
+      <div class="sal-hl-card c2">
+        <div class="num">44%</div>
+        <div class="desc">留大连/沈阳比例</div>
+      </div>
+      <div class="sal-hl-card c3">
+        <div class="num">$44M</div>
+        <div class="desc">英特尔工艺线原值</div>
+      </div>
+    </div>
+
+    <div class="section-title"><span class="icon">📋</span> 录取分数线（辽宁·物理类）</div>
+    <table class="admit-table">
+      <thead>
+        <tr><th>年份</th><th>省份</th><th>批次/专业组</th><th>分数</th><th>省排名</th><th>趋势</th></tr>
+      </thead>
+      <tbody>
+        <tr class="highlight">
+          <td class="yr-col">2025</td><td>辽宁</td><td>本科批 · 电子科学与技术（含集成电路设计与集成系统、电子信息材料）</td>
+          <td><span class="score-badge hi">645分</span></td>
+          <td><span class="rank-badge">≈3122名</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td class="yr-col">2025</td><td>辽宁</td><td>本科批 · 电子信息类（创新班）</td>
+          <td><span class="score-badge hi">661分</span></td>
+          <td><span class="rank-badge">≈1330名</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td class="yr-col">2025</td><td>辽宁</td><td>本科批 · 电子信息类（普通）</td>
+          <td><span class="score-badge hi">647分</span></td>
+          <td><span class="rank-badge">≈2833名</span></td>
+          <td>—</td>
+        </tr>
+        <tr class="highlight">
+          <td class="yr-col">2026</td><td>辽宁</td><td>本科批 · 电子科学与技术（含集成电路设计与集成系统）</td>
+          <td><span class="score-badge new">≈643-648分</span></td>
+          <td><span class="rank-badge new">≈3000-3300名</span></td>
+          <td><span class="trend-flat">→ 稳定</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="admit-summary">
+      <div class="admit-sum-card y25">
+        <div class="asc-title">2025年 辽宁物理类</div>
+        <div class="asc-row"><span>批次</span><b>本科批</b></div>
+        <div class="asc-row"><span>选科要求</span><b>物理+化学</b></div>
+        <div class="asc-row"><span>电子科学与技术</span><b>645分 / ≈3122名</b></div>
+        <div class="asc-row"><span>录取人数</span><b>38人</b></div>
+        <div class="asc-row"><span>学域培养</span><b>与软件工程/智能无人系统同学域</b></div>
+        <div class="asc-row"><span>就读校区</span><b>大连开发区校区</b></div>
+      </div>
+      <div class="admit-sum-card y26">
+        <div class="asc-title">2026年 预测</div>
+        <div class="asc-row"><span>辽宁</span><b>≈643-648分 / ≈3000-3300名</b></div>
+        <div class="asc-row"><span>招生计划</span><b>约60人（物理类）</b></div>
+        <div class="asc-row"><span>选科要求</span><b>物理+化学</b></div>
+        <div class="asc-row"><span>趋势</span><b class="trend-flat">→ 稳定</b></div>
+        <div class="asc-row"><span>专业级差</span><b>3分级差</b></div>
+      </div>
+    </div>
+    <div style="font-size:12px; color:#888; margin-top:12px; line-height:1.8;">
+      <strong>报考提示：</strong><br>
+      ▸ <strong>学域培养</strong>：电子科学与技术与软件工程、智能无人系统技术同学域培养，专业分流在上述专业内任选，灵活度高<br>
+      ▸ <strong>东北地区唯一</strong>：大工是东北地区唯一的国家示范性微电子学院筹建高校，区域IC人才培养龙头<br>
+      ▸ <strong>英特尔工艺线</strong>：拥有原值4400万美元的8英寸IC工艺线，国内高校罕见的完整制造工艺研发能力<br>
+      ▸ <strong>国际合作</strong>：与比利时IMEC建立创研基地，与美国加州大学欧文分校/UIC/英国布里斯托大学有联合培养项目<br>
+      ▸ <strong>就业特色</strong>：SK海力士（大连）重要人才来源，东北IC产业核心高校，存储芯片方向就业优势突出
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong>数据来源：</strong>大连理工大学集成电路学院官网、大连理工大学本科招生网、第五轮学科评估、各省市教育考试院<br>
+    全国28所示范性微电子学院介绍 · 第22所 · 大连理工大学集成电路学院 · 生成日期：2026年8月
+  </div>
+</div>
+
+<script>
+(function(){
+  var ok = false;
+  try { ok = sessionStorage.getItem('ic28_auth') === '1' || localStorage.getItem('ic28_auth_until') > String(Date.now()); } catch(e) {}
+  if (!ok) { location.replace('../index.html'); }
+})();
+</script>
+<div class="wb-nav-back" style="position:fixed;top:14px;left:14px;z-index:99999;">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;background:#1f3a8a;color:#fff;text-decoration:none;font-size:14px;padding:8px 16px;border-radius:999px;box-shadow:0 4px 12px rgba(0,0,0,.25);font-family:'Microsoft YaHei',sans-serif;">⌂ 返回首页</a>
+</div>
+
+</body>
+</html>

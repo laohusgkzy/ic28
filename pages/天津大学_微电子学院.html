@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天津大学 · 微电子学院 — 全国28所示范性微电子学院介绍 (21/28)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @media print {
+    @page { size: 1140px 5500px; margin: 0; }
+    body { padding: 0; background: #fff; }
+    .card { box-shadow: none; border-radius: 0; max-width: 1140px; }
+  }
+  body { font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif; background: #f0f2f5; color: #1a1a2e; padding: 20px; line-height: 1.6; }
+  .card { max-width: 1100px; margin: 0 auto; background: #fff; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden; }
+  .header { background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); padding: 36px 40px 28px; color: #fff; position: relative; }
+  .header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #ffd700, #ff8c00, #ff6b6b, #ffd700); background-size: 200% 100%; animation: shimmer 3s linear infinite; }
+  @keyframes shimmer { 0% { background-position: 0% 0%; } 100% { background-position: 200% 0%; } }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .badge-series { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); border-radius: 20px; padding: 4px 14px; font-size: 13px; letter-spacing: 1px; }
+  .badge-num { font-size: 28px; font-weight: 700; opacity: 0.9; }
+  .badge-num small { font-size: 14px; font-weight: 400; }
+  .header h1 { font-size: 28px; font-weight: 700; margin-top: 14px; letter-spacing: 1px; }
+  .header .subtitle { font-size: 13px; opacity: 0.85; margin-top: 6px; }
+  .header-tags { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  .htag { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; padding: 3px 12px; font-size: 13px; }
+  .htag.gold { background: rgba(255,215,0,0.25); border-color: rgba(255,215,0,0.5); }
+  .body { padding: 28px 40px 36px; }
+  .section-title { font-size: 16px; font-weight: 700; color: #2575fc; border-left: 4px solid #2575fc; padding-left: 10px; margin: 24px 0 14px; display: flex; align-items: center; gap: 8px; }
+  .section-title:first-child { margin-top: 0; }
+  .section-title .icon { font-size: 20px; }
+  .level-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .level-box { text-align: center; border-radius: 10px; padding: 14px 8px; border: 1px solid #e0e0e0; background: #fafafa; }
+  .level-box .lv-label { font-size: 12px; color: #888; margin-bottom: 4px; }
+  .level-box .lv-value { font-size: 15px; font-weight: 700; color: #1a1a2e; }
+  .level-box.hl { background: #e8f0ff; border-color: #2575fc; }
+  .level-box.gold { background: #fff8e1; border-color: #ffd700; }
+  .level-box.gold .lv-value { color: #b8860b; }
+  .eval-row { display: flex; gap: 16px; margin-top: 14px; }
+  .eval-card { flex: 1; border-radius: 10px; padding: 16px; text-align: center; }
+  .eval-card .grade { font-size: 36px; font-weight: 800; }
+  .eval-card .gname { font-size: 13px; color: #555; margin-top: 4px; }
+  .eval-card .gdetail { font-size: 11px; color: #999; margin-top: 2px; }
+  .eval-card.a-plus { background: linear-gradient(135deg, #fff3e0, #ffe0b2); border: 1px solid #ff9800; }
+  .eval-card.a-plus .grade { color: #e65100; }
+  .eval-card.a-star { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border: 1px solid #4caf50; }
+  .eval-card.a-star .grade { color: #2e7d32; }
+  .eval-card.b-plus { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border: 1px solid #42a5f5; }
+  .eval-card.b-plus .grade { color: #1565c0; }
+  .eval-card.first-batch { background: linear-gradient(135deg, #fce4ec, #f8bbd0); border: 1px solid #ec407a; }
+  .eval-card.first-batch .grade { color: #c62828; }
+  .degree-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .degree-table th { background: #f5f7fa; padding: 8px 10px; text-align: left; font-weight: 600; color: #555; border-bottom: 2px solid #e0e0e0; }
+  .degree-table td { padding: 8px 10px; border-bottom: 1px solid #f0f0f0; }
+  .degree-table tr:hover td { background: #f9f9f9; }
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+  .pill-dr { background: #e3f2fd; color: #1565c0; }
+  .pill-ms { background: #e8f5e9; color: #2e7d32; }
+  .pill-pd { background: #fce4ec; color: #c62828; }
+  .pill-ug { background: #fff3e0; color: #e65100; }
+  .pill-post { background: #f3e5f5; color: #7b1fa2; }
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before { content: ''; position: absolute; left: 7px; top: 4px; bottom: 4px; width: 2px; background: linear-gradient(180deg, #6a11cb, #2575fc, #00b4d8); }
+  .tl-item { position: relative; margin-bottom: 14px; }
+  .tl-item::before { content: ''; position: absolute; left: -21px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 3px solid #2575fc; }
+  .tl-item.major::before { border-color: #6a11cb; background: #6a11cb; }
+  .tl-year { font-weight: 700; color: #2575fc; font-size: 14px; }
+  .tl-text { font-size: 13px; color: #444; }
+  .focus-list { display: flex; flex-direction: column; gap: 8px; }
+  .focus-row { display: flex; align-items: center; gap: 12px; border-radius: 10px; padding: 10px 14px; transition: transform 0.2s; }
+  .focus-row:hover { transform: translateX(4px); }
+  .fr-rank { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: #fff; flex-shrink: 0; }
+  .fr-name { width: 150px; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+  .fr-stars { width: 80px; font-size: 16px; flex-shrink: 0; letter-spacing: 2px; }
+  .fr-desc { flex: 1; font-size: 12px; color: #666; }
+  .fr-tag { font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 600; flex-shrink: 0; }
+  .fr-tier1 { background: linear-gradient(90deg, #e3f2fd, #bbdefb); border: 1px solid #42a5f5; }
+  .fr-tier1 .fr-rank { background: #1565c0; } .fr-tier1 .fr-name { color: #0d47a1; } .fr-tier1 .fr-tag { background: #e3f2fd; color: #1565c0; }
+  .fr-tier2 { background: #f1f8e9; border: 1px solid #9ccc65; }
+  .fr-tier2 .fr-rank { background: #558b2f; } .fr-tier2 .fr-name { color: #33691e; } .fr-tier2 .fr-tag { background: #f1f8e9; color: #558b2f; }
+  .fr-tier3 { background: #fafafa; border: 1px solid #e0e0e0; }
+  .fr-tier3 .fr-rank { background: #9e9e9e; } .fr-tier3 .fr-name { color: #616161; } .fr-tier3 .fr-tag { background: #f5f5f5; color: #9e9e9e; }
+  .star-on { color: #ffa726; } .star-off { color: #e0e0e0; }
+  .chain-vis { margin-top: 16px; padding: 16px; background: #f8f9fc; border-radius: 10px; border: 1px solid #e8eaf0; }
+  .chain-vis-title { font-size: 13px; font-weight: 700; color: #555; margin-bottom: 12px; }
+  .chain-stages { display: flex; align-items: stretch; gap: 4px; }
+  .chain-stage { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .cs-bar-wrap { width: 100%; height: 120px; display: flex; align-items: flex-end; border-bottom: 2px solid #d0d0d0; }
+  .cs-bar { width: 70%; border-radius: 6px 6px 0 0; min-height: 8px; display: flex; align-items: flex-start; justify-content: center; padding-top: 4px; font-size: 10px; color: #fff; font-weight: 700; }
+  .cs-label { font-size: 12px; font-weight: 600; color: #555; }
+  .cs-level { font-size: 10px; padding: 1px 6px; border-radius: 3px; font-weight: 600; }
+  .cs-level.hi { background: #e3f2fd; color: #1565c0; }
+  .cs-level.md { background: #fff3e0; color: #e65100; }
+  .cs-level.lo { background: #f5f5f5; color: #aaa; }
+  .grad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grad-card { border-radius: 12px; padding: 18px; border: 1px solid #e0e0e0; }
+  .grad-card.rate { background: #f0f4ff; border-color: #2575fc; }
+  .grad-card.study { background: #f0fff4; border-color: #4caf50; }
+  .grad-card .gc-title { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+  .rate-big { font-size: 42px; font-weight: 800; color: #2575fc; }
+  .rate-big small { font-size: 16px; font-weight: 600; }
+  .rate-detail { font-size: 12px; color: #666; margin-top: 6px; }
+  .study-big { font-size: 42px; font-weight: 800; color: #2e7d32; }
+  .study-big small { font-size: 16px; font-weight: 600; }
+  .study-detail { font-size: 12px; color: #666; margin-top: 6px; }
+  .dest-list { margin-top: 14px; }
+  .dest-title { font-size: 13px; font-weight: 700; color: #555; margin-bottom: 8px; }
+  .dest-items { display: flex; flex-wrap: wrap; gap: 6px; }
+  .dest-tag { padding: 3px 10px; border-radius: 4px; font-size: 12px; background: #f5f7fa; border: 1px solid #e0e0e0; color: #333; }
+  .dest-tag.top { background: #e3f2fd; border-color: #42a5f5; color: #1565c0; font-weight: 600; }
+  .emp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .emp-region { border-radius: 12px; padding: 16px; border: 1px solid #e0e0e0; background: #fff; }
+  .emp-company { border-radius: 12px; padding: 16px; border: 1px solid #e0e0e0; background: #fff; }
+  .emp-title { font-size: 14px; font-weight: 700; margin-bottom: 12px; color: #333; }
+  .region-bar-item { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .region-name { width: 50px; font-size: 13px; font-weight: 600; text-align: right; }
+  .region-track { flex: 1; height: 22px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
+  .region-fill { height: 100%; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 6px; font-size: 11px; color: #fff; font-weight: 600; }
+  .company-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .ctag { padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+  .ctag.tier1 { background: #e3f2fd; color: #1565c0; border: 1px solid #42a5f5; }
+  .ctag.tier2 { background: #e8f5e9; color: #2e7d32; border: 1px solid #66bb6a; }
+  .ctag.tier3 { background: #fff3e0; color: #e65100; border: 1px solid #ffa726; }
+  .job-list { margin-top: 10px; font-size: 12px; color: #555; }
+  .job-list li { list-style: none; padding: 3px 0; }
+  .job-list li::before { content: '▸ '; color: #2575fc; }
+  .salary-chart { display: flex; align-items: flex-end; gap: 16px; height: 200px; padding: 16px 12px 0; border-bottom: 2px solid #e0e0e0; margin-bottom: 10px; }
+  .sal-bar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; justify-content: flex-end; }
+  .sal-bar-fill { width: 60%; min-height: 20px; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #6a11cb, #2575fc); display: flex; align-items: flex-start; justify-content: center; padding-top: 6px; font-size: 11px; color: #fff; font-weight: 700; transition: height 0.5s ease; }
+  .sal-bar-label { font-size: 12px; color: #666; font-weight: 600; flex-shrink: 0; }
+  .sal-note { font-size: 12px; color: #888; text-align: center; }
+  .sal-highlight { display: flex; gap: 12px; margin-top: 14px; }
+  .sal-hl-card { flex: 1; border-radius: 8px; padding: 12px; text-align: center; font-size: 12px; }
+  .sal-hl-card .num { font-size: 20px; font-weight: 800; }
+  .sal-hl-card .desc { color: #888; margin-top: 4px; }
+  .sal-hl-card.c1 { background: #e3f2fd; } .sal-hl-card.c1 .num { color: #1565c0; }
+  .sal-hl-card.c2 { background: #e8f5e9; } .sal-hl-card.c2 .num { color: #2e7d32; }
+  .sal-hl-card.c3 { background: #fce4ec; } .sal-hl-card.c3 .num { color: #c62828; }
+  .admit-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .admit-table th { background: #2575fc; color: #fff; padding: 9px 8px; text-align: left; font-weight: 600; }
+  .admit-table th:first-child { border-radius: 8px 0 0 0; }
+  .admit-table th:last-child { border-radius: 0 8px 0 0; text-align: center; }
+  .admit-table td { padding: 9px 8px; border-bottom: 1px solid #f0f0f0; }
+  .admit-table td:last-child { text-align: center; }
+  .admit-table tr:hover td { background: #f5f9ff; }
+  .admit-table .highlight td { background: #fff8e1; font-weight: 600; }
+  .admit-table .yr-col { text-align: center; white-space: nowrap; }
+  .score-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 12.5px; }
+  .score-badge.hi { background: #e3f2fd; color: #1565c0; }
+  .score-badge.lo { background: #e8f5e9; color: #2e7d32; }
+  .score-badge.new { background: #fce4ec; color: #c62828; }
+  .rank-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 12.5px; background: #f5f5f5; color: #333; }
+  .rank-badge.new { background: #fce4ec; color: #c62828; }
+  .trend-up { color: #e53935; font-weight: 700; }
+  .trend-dn { color: #43a047; font-weight: 700; }
+  .trend-flat { color: #999; font-weight: 600; }
+  .admit-summary { margin-top: 12px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .admit-sum-card { flex: 1; min-width: 200px; border-radius: 8px; padding: 12px; font-size: 12px; }
+  .admit-sum-card.y25 { background: #e3f2fd; border: 1px solid #90caf9; }
+  .admit-sum-card.y26 { background: #fce4ec; border: 1px solid #f48fb1; }
+  .admit-sum-card .asc-title { font-weight: 700; margin-bottom: 6px; font-size: 13px; }
+  .admit-sum-card.y25 .asc-title { color: #1565c0; }
+  .admit-sum-card.y26 .asc-title { color: #c62828; }
+  .admit-sum-card .asc-row { display: flex; justify-content: space-between; padding: 2px 0; }
+  .admit-sum-card .asc-row b { font-weight: 700; }
+  .footer { padding: 16px 40px 20px; border-top: 1px solid #f0f0f0; font-size: 11px; color: #aaa; text-align: center; }
+  .footer strong { color: #888; }
+  .platform-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .plat-badge { background: linear-gradient(135deg, #6a11cb, #2575fc); color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+  .plat-badge .star { color: #ffd700; }
+  .info-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+  .info-card { border-radius: 10px; padding: 16px; border: 1px solid #e0e0e0; text-align: center; }
+  .info-card .ic-num { font-size: 28px; font-weight: 800; color: #2575fc; }
+  .info-card .ic-label { font-size: 12px; color: #888; margin-top: 4px; }
+  .info-card .ic-detail { font-size: 11px; color: #aaa; margin-top: 2px; }
+  .info-card.green { background: #f0fff4; border-color: #4caf50; }
+  .info-card.green .ic-num { color: #2e7d32; }
+  .info-card.orange { background: #fff8e1; border-color: #ffd700; }
+  .info-card.orange .ic-num { color: #b8860b; }
+  .info-card.blue { background: #e8f0ff; border-color: #2575fc; }
+  .platform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+  .platform-card { border-radius: 10px; padding: 14px; border: 1px solid #e0e0e0; background: #fafafa; }
+  .platform-card .pc-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .platform-card .pc-list { font-size: 12px; color: #666; }
+  .platform-card .pc-list li { list-style: none; padding: 3px 0; }
+  .platform-card .pc-list li::before { content: '▸ '; color: #2575fc; }
+  @media (max-width: 768px) {
+    .level-grid { grid-template-columns: repeat(2, 1fr); }
+    .grad-grid, .emp-grid, .eval-row, .sal-highlight, .info-cards, .platform-grid { grid-template-columns: 1fr; display: grid; }
+    .header h1 { font-size: 22px; }
+  }
+</style>
+<script>(function(){var ok=false;try{ok=sessionStorage.getItem('ic28_auth')==='1'||localStorage.getItem('ic28_auth_until')>String(Date.now());}catch(e){}if(!ok){location.replace('../index.html');}})();</script>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <div class="header-top">
+      <div>
+        <h1>天津大学 · 微电子学院</h1>
+        <div class="subtitle">Tianjin University · School of Microelectronics | 天津市唯一国家示范性微电子学院 · 学科发展92周年</div>
+      </div>
+      <div style="text-align:center;">
+        <div class="badge-series">全国示范性微电子学院</div>
+        <div class="badge-num" style="margin-top:8px;">21<small> / 28</small></div>
+      </div>
+    </div>
+    <div class="header-tags">
+      <span class="htag gold">985工程</span>
+      <span class="htag gold">211工程</span>
+      <span class="htag gold">双一流</span>
+      <span class="htag">教育部直属</span>
+      <span class="htag">天津 · 北洋园校区</span>
+      <span class="htag">国家示范性微电子学院（2015，天津市唯一）</span>
+      <span class="htag">微电子学与固体电子学 国家二级重点学科</span>
+      <span class="htag">集成电路科学与工程 交叉学科博士点（2022）</span>
+    </div>
+    <div class="platform-badges">
+      <span class="plat-badge"><span class="star">★</span> 国家示范性微电子学院 (2015，26所之一)</span>
+      <span class="plat-badge"><span class="star">★</span> 国家集成电路人才培养基地</span>
+      <span class="plat-badge"><span class="star">★</span> 微电子学与固体电子学 国家二级重点学科</span>
+      <span class="plat-badge"><span class="star">★</span> 天津国家"芯火"双创平台</span>
+      <span class="plat-badge"><span class="star">★</span> 天津市成像与感知微电子技术重点实验室</span>
+    </div>
+  </div>
+
+  <div class="body">
+    <!-- 1. 院校层次 -->
+    <div class="section-title"><span class="icon">🏫</span> 院校层次与基本情况</div>
+    <div class="level-grid">
+      <div class="level-box gold"><div class="lv-label">院校层次</div><div class="lv-value">985 / 211 / 双一流</div></div>
+      <div class="level-box"><div class="lv-label">主管部门</div><div class="lv-value">教育部直属</div></div>
+      <div class="level-box hl"><div class="lv-label">所在校区</div><div class="lv-value">天津·北洋园校区</div></div>
+      <div class="level-box"><div class="lv-label">学院建制</div><div class="lv-value">微电子学院（2016独立建制）</div></div>
+    </div>
+    <div class="eval-row">
+      <div class="eval-card b-plus">
+        <div class="grade">B+</div>
+        <div class="gname">电子科学与技术</div>
+        <div class="gdetail">第五轮学科评估 · 国家一级学科</div>
+      </div>
+      <div class="eval-card first-batch">
+        <div class="grade">2022</div>
+        <div class="gname">集成电路科学与工程</div>
+        <div class="gdetail">交叉学科博士点 · 2022年新增</div>
+      </div>
+      <div class="eval-card a-star">
+        <div class="grade">98%+</div>
+        <div class="gname">就业率</div>
+        <div class="gdetail">微电子学院研究生就业率 · 央企国企40%</div>
+      </div>
+    </div>
+
+    <!-- 2. 历史沿革 -->
+    <div class="section-title"><span class="icon">📜</span> 历史沿革</div>
+    <div class="timeline">
+      <div class="tl-item major">
+        <span class="tl-year">1933年</span>
+        <div class="tl-text">北洋大学电机工程学系 —— 学科发展之源（学科发展92周年）</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1952年</span>
+        <div class="tl-text">南开大学工学院电机工程系并入天津大学，创立天津大学电信系</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1955年</span>
+        <div class="tl-text">电信系大部分教师和全体学生迁往北京，创建北京邮电学院</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1960年</span>
+        <div class="tl-text">成立天津大学无线电工程系（1971年恢复招生，1979年更名电子工程系）</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1996年</span>
+        <div class="tl-text">电子工程系、计算机科学与工程系、网络信息中心合并成立电子信息工程学院</div>
+      </div>
+      <div class="tl-item major">
+        <span class="tl-year">2015年9月</span>
+        <div class="tl-text">微电子学院依托原电子信息工程学院成立 —— 全国首批26所国家示范性微电子学院建设与筹备单位之一</div>
+      </div>
+      <div class="tl-item major">
+        <span class="tl-year">2016年11月</span>
+        <div class="tl-text">微电子学院独立建制 —— 天津市唯一的国家示范性微电子学院</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2017年12月</span>
+        <div class="tl-text">微电子作为天津大学十个重点支持建设领域之一</div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2019年</span>
+        <div class="tl-text">举办国家示范性微电子学院建设发展研讨会，辐射带动区域高校微电子人才培养</div>
+      </div>
+      <div class="tl-item major">
+        <span class="tl-year">2022年</span>
+        <div class="tl-text">新增集成电路科学与工程交叉学科博士点；两个本科专业均获批国家一流本科专业建设点；创办"吴咏诗英才班"</div>
+      </div>
+      <div class="tl-item major">
+        <span class="tl-year">2025年</span>
+        <div class="tl-text">微电子学院成立10周年暨学科发展92周年 —— 牵头天津国家"芯火"双创平台建设</div>
+      </div>
+    </div>
+
+    <!-- 3. 学科评估 -->
+    <div class="section-title"><span class="icon">📊</span> 学科评估与学科实力</div>
+    <div class="level-grid">
+      <div class="level-box"><div class="lv-label">电子科学与技术</div><div class="lv-value">B+（第五轮）</div></div>
+      <div class="level-box hl"><div class="lv-label">集成电路科学与工程</div><div class="lv-value">交叉学科博士点</div></div>
+      <div class="level-box gold"><div class="lv-label">国家二级重点学科</div><div class="lv-value">微电子学与固体电子学</div></div>
+      <div class="level-box"><div class="lv-label">博士后流动站</div><div class="lv-value">电子科学与技术</div></div>
+    </div>
+    <div class="info-cards">
+      <div class="info-card blue">
+        <div class="ic-num">3个</div>
+        <div class="ic-label">博士点</div>
+        <div class="ic-detail">电子科学与技术 / 集成电路科学与工程 / 电子信息(专博)</div>
+      </div>
+      <div class="info-card green">
+        <div class="ic-num">2个</div>
+        <div class="ic-label">国家一流本科专业</div>
+        <div class="ic-detail">电子科学与技术 / 集成电路设计与集成系统</div>
+      </div>
+      <div class="info-card orange">
+        <div class="ic-num">92年</div>
+        <div class="ic-label">学科积淀</div>
+        <div class="ic-detail">溯源于1933年北洋大学电机工程学系</div>
+      </div>
+    </div>
+
+    <!-- 4. 学位项目 -->
+    <div class="section-title"><span class="icon">🎓</span> 学位项目与培养体系</div>
+    <table class="degree-table">
+      <thead>
+        <tr><th>层次</th><th>专业名称</th><th>类型</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="pill pill-ug">本科</span></td><td>电子科学与技术</td><td>工学</td><td>国家一流本科专业 / 教育部特色专业卓越工程师计划</td></tr>
+        <tr><td><span class="pill pill-ug">本科</span></td><td>集成电路设计与集成系统</td><td>工学</td><td>教育部特色专业卓越工程师计划 / 国家一流本科专业</td></tr>
+        <tr><td><span class="pill pill-ms">硕士</span></td><td>电子科学与技术（080900）</td><td>学术硕士</td><td>一级学科硕士点</td></tr>
+        <tr><td><span class="pill pill-ms">硕士</span></td><td>集成电路科学与工程（140100）</td><td>学术硕士</td><td>交叉学科硕士点</td></tr>
+        <tr><td><span class="pill pill-ms">硕士</span></td><td>电子信息（085400）</td><td>专业硕士</td><td>含集成电路工程方向</td></tr>
+        <tr><td><span class="pill pill-dr">博士</span></td><td>电子科学与技术（080900）</td><td>学术博士</td><td>一级学科博士点</td></tr>
+        <tr><td><span class="pill pill-dr">博士</span></td><td>集成电路科学与工程（140100）</td><td>学术博士</td><td><strong>交叉学科博士点（2022年新增）</strong></td></tr>
+        <tr><td><span class="pill pill-dr">博士</span></td><td>电子信息</td><td>工程博士</td><td>专业学位博士点</td></tr>
+        <tr><td><span class="pill pill-post">博士后</span></td><td>电子科学与技术</td><td>流动站</td><td>博士后科研流动站</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:12px; color:#666; margin-top:10px;">
+      ▸ <strong>吴咏诗英才班</strong>（2022年创办）：本研贯通培养，构建拔尖创新人才培养体系<br>
+      ▸ <strong>校企联合科创菁英班</strong>：与华为、飞腾等企业共建创新实验室，合作开发课程<br>
+      ▸ <strong>"四位一体"卓越集成电路人才培养</strong>：获评国家级研究生教学成果二等奖
+    </div>
+
+    <!-- 5. 研究方向 -->
+    <div class="section-title"><span class="icon">🔬</span> 重点研究方向</div>
+    <div class="focus-list">
+      <div class="focus-row fr-tier1">
+        <div class="fr-rank">1</div>
+        <div class="fr-name">射频/太赫兹电路与系统</div>
+        <div class="fr-stars">★★★</div>
+        <div class="fr-desc">射频/太赫兹(THz)电路与系统设计，马凯学教授团队（IEEE Fellow）领衔，国际微波年会学生设计大赛冠军</div>
+        <div class="fr-tag">核心优势</div>
+      </div>
+      <div class="focus-row fr-tier1">
+        <div class="fr-rank">2</div>
+        <div class="fr-name">成像感知微系统</div>
+        <div class="fr-stars">★★★</div>
+        <div class="fr-desc">半导体成像感知、红外成像技术（与津航技术物理研究所共建工程中心），天津市成像与感知微电子技术重点实验室</div>
+        <div class="fr-tag">特色方向</div>
+      </div>
+      <div class="focus-row fr-tier1">
+        <div class="fr-rank">3</div>
+        <div class="fr-name">智能芯片微系统</div>
+        <div class="fr-stars">★★★</div>
+        <div class="fr-desc">智能芯片设计、AI加速器、边缘智能计算芯片，面向物联网与人工智能应用</div>
+        <div class="fr-tag">核心方向</div>
+      </div>
+      <div class="focus-row fr-tier2">
+        <div class="fr-rank">4</div>
+        <div class="fr-name">功率半导体与新能源芯片</div>
+        <div class="fr-stars">★★</div>
+        <div class="fr-desc">功率器件、汽车电子芯片、新能源芯片设计，北方重要功率半导体研究基地</div>
+        <div class="fr-tag">产业特色</div>
+      </div>
+      <div class="focus-row fr-tier2">
+        <div class="fr-rank">5</div>
+        <div class="fr-name">微纳电子材料与器件</div>
+        <div class="fr-stars">★★</div>
+        <div class="fr-desc">微纳电子信息功能材料、新型半导体器件，基础研究与前沿探索</div>
+        <div class="fr-tag">重点方向</div>
+      </div>
+      <div class="focus-row fr-tier2">
+        <div class="fr-rank">6</div>
+        <div class="fr-name">集成电路安全技术</div>
+        <div class="fr-stars">★★</div>
+        <div class="fr-desc">芯片安全、硬件安全防护、侧信道攻击防护，面向国家安全需求</div>
+        <div class="fr-tag">特色方向</div>
+      </div>
+      <div class="focus-row fr-tier3">
+        <div class="fr-rank">7</div>
+        <div class="fr-name">模拟集成电路设计</div>
+        <div class="fr-stars">★</div>
+        <div class="fr-desc">高精度模拟IC、混合信号电路，面向传感器接口与信号处理</div>
+        <div class="fr-tag">支撑方向</div>
+      </div>
+    </div>
+
+    <!-- 6. 产业链覆盖 -->
+    <div class="section-title"><span class="icon">🔗</span> 集成电路产业链覆盖</div>
+    <div class="chain-vis">
+      <div class="chain-vis-title">天津大学 — 射频太赫兹+成像感知特色链条布局（侧重设计与应用集成，北方重要微电子基地）</div>
+      <div class="chain-stages">
+        <div class="chain-stage">
+          <div class="cs-bar-wrap"><div class="cs-bar" style="height:40px; background: linear-gradient(180deg, #66bb6a, #43a047);">中</div></div>
+          <div class="cs-label">材料</div>
+          <div class="cs-level md">中</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap"><div class="cs-bar" style="height:70px; background: linear-gradient(180deg, #42a5f5, #1565c0);">强</div></div>
+          <div class="cs-label">设计</div>
+          <div class="cs-level hi">强</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap"><div class="cs-bar" style="height:35px; background: linear-gradient(180deg, #66bb6a, #43a047);">中</div></div>
+          <div class="cs-label">制造</div>
+          <div class="cs-level md">中</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap"><div class="cs-bar" style="height:30px; background: linear-gradient(180deg, #66bb6a, #43a047);">中</div></div>
+          <div class="cs-label">封测</div>
+          <div class="cs-level md">中</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap"><div class="cs-bar" style="height:12px; background: linear-gradient(180deg, #bdbdbd, #9e9e9e);">弱</div></div>
+          <div class="cs-label">设备</div>
+          <div class="cs-level lo">弱</div>
+        </div>
+        <div class="chain-stage">
+          <div class="cs-bar-wrap"><div class="cs-bar" style="height:60px; background: linear-gradient(180deg, #42a5f5, #1565c0);">强</div></div>
+          <div class="cs-label">应用集成</div>
+          <div class="cs-level hi">强</div>
+        </div>
+      </div>
+    </div>
+    <div style="font-size:12px; color:#888; margin-top:10px;">
+      ▸ <strong>材料</strong>：微纳电子材料与器件、新型半导体材料　▸ <strong>设计</strong>：射频/太赫兹IC、智能芯片、模拟IC、功率器件（核心优势）　▸ <strong>制造</strong>：微电子工艺研发　▸ <strong>封测</strong>：封装集成　▸ <strong>应用集成</strong>：成像感知微系统、红外成像、新能源芯片、车规芯片、集成电路安全
+    </div>
+
+    <!-- 7. 师资与学生 -->
+    <div class="section-title"><span class="icon">👨‍🏫</span> 师资队伍与学生规模</div>
+    <div class="info-cards">
+      <div class="info-card blue">
+        <div class="ic-num">50人</div>
+        <div class="ic-label">教职工总数</div>
+        <div class="ic-detail">教授16人 · 副教授16人 · 博导25人 · 硕导38人</div>
+      </div>
+      <div class="info-card green">
+        <div class="ic-num">1583</div>
+        <div class="ic-label">在校生规模</div>
+        <div class="ic-detail">本科生832人 · 研究生751人</div>
+      </div>
+      <div class="info-card orange">
+        <div class="ic-num">55%+</div>
+        <div class="ic-label">本科深造率</div>
+        <div class="ic-detail">每年本科生赴国内外著名大学深造比例超55%</div>
+      </div>
+    </div>
+    <div class="platform-grid">
+      <div class="platform-card">
+        <div class="pc-title">高层次人才</div>
+        <ul class="pc-list">
+          <li>新加坡两院院士 / 加拿大工程院外籍院士 1人</li>
+          <li>IEEE Fellow 1人（马凯学教授，2023年当选）</li>
+          <li>国家杰青 1-2人</li>
+          <li>教育部新世纪(跨世纪)人才 5-6人</li>
+          <li>国家级领军人才 1人</li>
+          <li>国家级青年人才 2人</li>
+          <li>天津市教学名师 1人</li>
+          <li>天津市创新团队 1个（重点领域创新团队）</li>
+          <li>2024年多位教师跻身斯坦福2%科学家榜单</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="pc-title">教学科研平台</div>
+        <ul class="pc-list">
+          <li>国家集成电路人才培养基地</li>
+          <li>天津国家"芯火"双创平台（牵头建设）</li>
+          <li>天津市成像与感知微电子技术重点实验室</li>
+          <li>天津市集成电路设计中心</li>
+          <li>天津市集成电路与计算系统技术工程中心</li>
+          <li>天津市红外成像技术工程中心（与津航技术物理研究所共建）</li>
+          <li>天津市物联网国际联合研究中心</li>
+          <li>教育部先进陶瓷与加工技术重点实验室（方向之一）</li>
+          <li>近五年科研经费超2亿元，SCI论文760篇，授权发明专利400余项</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 8. 升学就业 -->
+    <div class="section-title"><span class="icon">📈</span> 升学与就业</div>
+    <div class="grad-grid">
+      <div class="grad-card rate">
+        <div class="gc-title">本科深造率</div>
+        <div class="rate-big">55<small>%+</small></div>
+        <div class="rate-detail">每年本科生赴国内外著名大学继续深造比例超55%</div>
+      </div>
+      <div class="grad-card study">
+        <div class="gc-title">研究生就业率</div>
+        <div class="study-big">98<small>%+</small></div>
+        <div class="rate-detail">毕业生一次就业率均超98% · 央企23%+国企17%=40%</div>
+      </div>
+    </div>
+    <div class="dest-list">
+      <div class="dest-title">主要深造去向</div>
+      <div class="dest-items">
+        <span class="dest-tag top">本校保研/直博</span>
+        <span class="dest-tag top">清华大学</span>
+        <span class="dest-tag top">北京大学</span>
+        <span class="dest-tag">中国科学院大学</span>
+        <span class="dest-tag">上海交通大学</span>
+        <span class="dest-tag">复旦大学</span>
+        <span class="dest-tag">浙江大学</span>
+        <span class="dest-tag">电子科技大学</span>
+        <span class="dest-tag">佐治亚理工（联合办学）</span>
+        <span class="dest-tag">QS前200院校（5所联合培养）</span>
+      </div>
+    </div>
+
+    <div class="emp-grid" style="margin-top: 16px;">
+      <div class="emp-region">
+        <div class="emp-title">就业地域分布</div>
+        <div class="region-bar-item">
+          <div class="region-name">天津</div>
+          <div class="region-track"><div class="region-fill" style="width: 36%; background: #2575fc;">36%</div></div>
+        </div>
+        <div class="region-bar-item">
+          <div class="region-name">北京</div>
+          <div class="region-track"><div class="region-fill" style="width: 27%; background: #6a11cb;">27%</div></div>
+        </div>
+        <div class="region-bar-item">
+          <div class="region-name">上海</div>
+          <div class="region-track"><div class="region-fill" style="width: 9%; background: #00b4d8;">9%</div></div>
+        </div>
+        <div class="region-bar-item">
+          <div class="region-name">深圳</div>
+          <div class="region-track"><div class="region-fill" style="width: 5%; background: #43a047;">5%</div></div>
+        </div>
+        <div class="region-bar-item">
+          <div class="region-name">沈阳</div>
+          <div class="region-track"><div class="region-fill" style="width: 2%; background: #ffa726;">2%</div></div>
+        </div>
+      </div>
+      <div class="emp-company">
+        <div class="emp-title">主要就业单位</div>
+        <div class="company-tags">
+          <span class="ctag tier1">国家电网 (211人)</span>
+          <span class="ctag tier1">中国电科 (132人)</span>
+          <span class="ctag tier1">中国航天科工 (72人)</span>
+          <span class="ctag tier1">中国航天科技 (59人)</span>
+          <span class="ctag tier1">中国航空工业 (80人)</span>
+          <span class="ctag tier1">中国船舶集团 (76人)</span>
+          <span class="ctag tier2">中兴通讯 (60人)</span>
+          <span class="ctag tier2">华为 (23人)</span>
+          <span class="ctag tier2">中芯国际 (43人)</span>
+          <span class="ctag tier2">京东方 (22人)</span>
+          <span class="ctag tier3">荣耀终端 (37人)</span>
+          <span class="ctag tier3">腾讯 (35人)</span>
+          <span class="ctag tier3">阿里巴巴 (45人)</span>
+          <span class="ctag tier3">抖音集团 (49人)</span>
+          <span class="ctag tier3">海思半导体</span>
+          <span class="ctag tier3">紫光展锐</span>
+          <span class="ctag tier3">恩智浦半导体</span>
+        </div>
+        <ul class="job-list">
+          <li>央企23% + 国企17% = 40%进入国有企业体系</li>
+          <li>大多数毕业生进入国家战略性重点单位及行业领军企业</li>
+          <li>与QS前200的5所院校建立联合培养项目，近五年境外交流51人</li>
+          <li>学生在校获全国大学生"挑战杯"特等奖、国际微波年会学生设计大赛冠军等</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 9. 薪酬与录取 -->
+    <div class="section-title"><span class="icon">💰</span> 薪酬水平</div>
+    <div class="salary-chart">
+      <div class="sal-bar">
+        <div class="sal-bar-fill" style="height: 42px;">7.0K</div>
+        <div class="sal-bar-label">应届 0年</div>
+      </div>
+      <div class="sal-bar">
+        <div class="sal-bar-fill" style="height: 58px;">9.6K</div>
+        <div class="sal-bar-label">工作 2年</div>
+      </div>
+      <div class="sal-bar">
+        <div class="sal-bar-fill" style="height: 82px;">13.7K</div>
+        <div class="sal-bar-label">工作 5年</div>
+      </div>
+      <div class="sal-bar">
+        <div class="sal-bar-fill" style="height: 119px;">19.9K</div>
+        <div class="sal-bar-label">工作 10年</div>
+      </div>
+    </div>
+    <div class="sal-note">数据来源：天津大学本科就业去向统计 · 单位：元/月（月薪均值）</div>
+    <div class="sal-highlight">
+      <div class="sal-hl-card c1">
+        <div class="num">7.0K</div>
+        <div class="desc">应届起薪（月薪）</div>
+      </div>
+      <div class="sal-hl-card c2">
+        <div class="num">25-40万</div>
+        <div class="desc">研究生年薪区间</div>
+      </div>
+      <div class="sal-hl-card c3">
+        <div class="num">63%</div>
+        <div class="desc">京津地区就业比例</div>
+      </div>
+    </div>
+
+    <div class="section-title"><span class="icon">📋</span> 录取分数线</div>
+    <table class="admit-table">
+      <thead>
+        <tr><th>年份</th><th>省份</th><th>批次/专业组</th><th>分数</th><th>省排名</th><th>趋势</th></tr>
+      </thead>
+      <tbody>
+        <tr class="highlight">
+          <td class="yr-col">2025</td><td>天津</td><td>本科批A段 · 工科试验班（电子科学技术类：电子科学与技术(微电子)+集成电路设计与集成系统）</td>
+          <td><span class="score-badge hi">663分</span></td>
+          <td><span class="rank-badge">≈1923名</span></td>
+          <td>—</td>
+        </tr>
+        <tr class="highlight">
+          <td class="yr-col">2025</td><td>河北</td><td>本科批 · 工科试验班（电子科学技术类）</td>
+          <td><span class="score-badge hi">654分</span></td>
+          <td><span class="rank-badge">≈2505名</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td class="yr-col">2025</td><td>北京</td><td>本科批 · 电子信息类</td>
+          <td><span class="score-badge hi">655分</span></td>
+          <td><span class="rank-badge">≈2200名</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td class="yr-col">2025</td><td>山东</td><td>本科批 · 电子信息类</td>
+          <td><span class="score-badge hi">648分</span></td>
+          <td><span class="rank-badge">≈4200名</span></td>
+          <td>—</td>
+        </tr>
+        <tr class="highlight">
+          <td class="yr-col">2026</td><td>天津</td><td>本科批A段 · 工科试验班（电子科学技术类）</td>
+          <td><span class="score-badge new">≈660-665分</span></td>
+          <td><span class="rank-badge new">≈1800-2000名</span></td>
+          <td><span class="trend-flat">→ 稳定</span></td>
+        </tr>
+        <tr>
+          <td class="yr-col">2026</td><td>河北</td><td>本科批 · 工科试验班（电子科学技术类）</td>
+          <td><span class="score-badge new">≈650-655分</span></td>
+          <td><span class="rank-badge new">≈2400-2600名</span></td>
+          <td><span class="trend-flat">→ 稳定</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="admit-summary">
+      <div class="admit-sum-card y25">
+        <div class="asc-title">2025年 天津综合类</div>
+        <div class="asc-row"><span>批次</span><b>本科批A段</b></div>
+        <div class="asc-row"><span>专业组</span><b>02组（物理+化学）</b></div>
+        <div class="asc-row"><span>专业</span><b>工科试验班（电子科学技术类）</b></div>
+        <div class="asc-row"><span>录取分</span><b>663分</b></div>
+        <div class="asc-row"><span>市排名</span><b>≈1923名</b></div>
+        <div class="asc-row"><span>录取人数</span><b>37人</b></div>
+      </div>
+      <div class="admit-sum-card y26">
+        <div class="asc-title">2026年 预测</div>
+        <div class="asc-row"><span>天津</span><b>≈660-665分 / ≈1800-2000名</b></div>
+        <div class="asc-row"><span>河北</span><b>≈650-655分 / ≈2400-2600名</b></div>
+        <div class="asc-row"><span>趋势</span><b class="trend-flat">→ 稳定</b></div>
+        <div class="asc-row"><span>选科要求</span><b>物理+化学</b></div>
+        <div class="asc-row"><span>特色班型</span><b>吴咏诗英才班（本研贯通）</b></div>
+      </div>
+    </div>
+    <div style="font-size:12px; color:#888; margin-top:12px; line-height:1.8;">
+      <strong>报考提示：</strong><br>
+      ▸ <strong>大类招生</strong>：工科试验班（电子科学技术类）含电子科学与技术(微电子)、集成电路设计与集成系统，大类培养后分流<br>
+      ▸ <strong>吴咏诗英才班</strong>（2022年创办）：本研贯通培养方案，适合有志于深造的拔尖学生<br>
+      ▸ <strong>校企联合</strong>：与华为、飞腾等共建实习实训基地和创新实验室，开设校企联合科创菁英班<br>
+      ▸ <strong>国际交流</strong>：与佐治亚理工等QS前200院校联合办学，3+1国际联合培养项目<br>
+      ▸ <strong>就业优势</strong>：央企国企40%就业比例，国家电网/中国电科/航天系统核心生源校
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong>数据来源：</strong>天津大学微电子学院官网、天津大学本科招生网、第五轮学科评估、各省市教育考试院<br>
+    全国28所示范性微电子学院介绍 · 第21所 · 天津大学微电子学院 · 生成日期：2026年8月
+  </div>
+</div>
+
+<script>
+(function(){
+  var ok = false;
+  try { ok = sessionStorage.getItem('ic28_auth') === '1' || localStorage.getItem('ic28_auth_until') > String(Date.now()); } catch(e) {}
+  if (!ok) { location.replace('../index.html'); }
+})();
+</script>
+<div class="wb-nav-back" style="position:fixed;top:14px;left:14px;z-index:99999;">
+  <a href="../index.html" style="display:inline-flex;align-items:center;gap:6px;background:#1f3a8a;color:#fff;text-decoration:none;font-size:14px;padding:8px 16px;border-radius:999px;box-shadow:0 4px 12px rgba(0,0,0,.25);font-family:'Microsoft YaHei',sans-serif;">⌂ 返回首页</a>
+</div>
+
+</body>
+</html>
