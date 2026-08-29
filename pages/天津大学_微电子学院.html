@@ -193,42 +193,17 @@
 <script>(function(){var ok=false;try{ok=sessionStorage.getItem('ic28_auth')==='1'||localStorage.getItem('ic28_auth_until')>String(Date.now());}catch(e){}if(!ok){location.replace('../index.html');}})();</script>
 
 <style>
-/* ===== 移动端自适应缩放（v2） ===== */
-@media (max-width: 1112px) {
-  html, body { overflow-x: hidden; }
-  body { padding: 8px 6px; }
+/* ===== 移动端表格优化（注入 ic28tbl）：小屏下数据表可横向滑动，其余不变 ===== */
+@media (max-width: 768px) {
+  .degree-table, .admit-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .degree-table th, .degree-table td,
+  .admit-table th, .admit-table td { white-space: nowrap; }
 }
 </style>
-<script>
-(function(){
-  var DESIGN = 1100;
-  function ic28fit(){
-    var card = document.querySelector('.card');
-    if(!card) return;
-    var avail = window.innerWidth - 12;
-    if(avail >= DESIGN){
-      card.style.width = '';
-      card.style.maxWidth = '';
-      card.style.transform = '';
-      card.style.marginBottom = '';
-      return;
-    }
-    var s = avail / DESIGN;
-    card.style.width = DESIGN + 'px';
-    card.style.maxWidth = 'none';
-    card.style.transformOrigin = 'top left';
-    card.style.transform = 'scale(' + s + ')';
-    card.style.marginBottom = (card.offsetHeight * (s - 1)) + 'px';
-  }
-  window.addEventListener('resize', ic28fit);
-  window.addEventListener('orientationchange', function(){ setTimeout(ic28fit, 300); });
-  window.addEventListener('load', ic28fit);
-  if(document.readyState !== 'loading'){ ic28fit(); }
-  else { document.addEventListener('DOMContentLoaded', ic28fit); }
-  setTimeout(ic28fit, 800);
-})();
-</script>
-
 </head>
 <body>
 <div class="card">
