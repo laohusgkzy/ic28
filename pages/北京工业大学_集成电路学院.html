@@ -299,6 +299,20 @@
   .admit-table th, .admit-table td { white-space: nowrap; }
 }
 </style>
+<style>
+/* ===== 移动端侧重方向优化（注入 ic28focus）：小屏下改两行布局，其余不变 ===== */
+@media (max-width: 768px) {
+  .focus-row {
+    flex-wrap: wrap;
+    row-gap: 4px;
+    padding: 10px 12px;
+  }
+  .fr-rank { width: 22px; height: 22px; font-size: 12px; }
+  .fr-name { width: auto; flex: 1 1 auto; min-width: 0; font-size: 13px; }
+  .fr-stars { width: auto; font-size: 13px; letter-spacing: 1px; }
+  .fr-desc { order: 2; flex: 1 1 100%; font-size: 12px; line-height: 1.5; }
+}
+</style>
 </head>
 <body>
 
